@@ -4,7 +4,6 @@ The official portfolio website of **S. M. Mahmud Iqbal**, built with a **Grunge 
 
 **Developed by S. M. Mahmud Iqbal**  
 *Food Process Engineering & Modern Systems Architecture*  
-*Dhaka, Bangladesh (23.8103° N, 90.4125° E)*
 
 ---
 
