@@ -1,0 +1,1297 @@
+/* ==========================================================================
+   STYLE SYSTEM: GRUNGE COLLAGE MOTION GRAPHICS
+   Developed by S. M. Mahmud Iqbal
+   
+   Design Philosophy:
+   - Core Concept: Raw, Chaotic Energy & Stop-Motion Physical Media
+   - Distressed Textures: Grit, Halftone dots, Torn paper edges, Ink bleeds
+   - Fragmented Composition: Overlapping elements, Breaking the grid
+   - Typography as Image: Massive distressed sans, Hand-drawn script, Technical mono
+   - High-Frequency Jitter: Stop-motion low-frame-rate animation (steps(2), steps(4))
+   - Bold Limited Palette: #F0EAD6 (Paper), #1A1A1A (Charcoal), #DC143C (Crimson), #C5A945 (Gold)
+   ========================================================================== */
+
+:root {
+  /* THE "DISTRESSED" PALETTE */
+  --paper-bg: #F0EAD6;
+  --charcoal-black: #1A1A1A;
+  --crimson-red: #DC143C;
+  --crimson-dark: #b01030;
+  --muted-gold: #C5A945;
+  --tape-color: rgba(225, 218, 195, 0.88);
+
+  /* TYPOGRAPHY TOKENS */
+  --font-headline: 'Oswald', 'Impact', -apple-system, sans-serif;
+  --font-script: 'Permanent Marker', 'Rock Salt', cursive;
+  --font-mono: 'Roboto Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Rejects digital smoothness for physical stop-motion feel */
+  font-size: 16px;
+  background-color: var(--paper-bg);
+  color: var(--charcoal-black);
+}
+
+body.grunge-body {
+  font-family: var(--font-mono);
+  background-color: var(--paper-bg);
+  color: var(--charcoal-black);
+  line-height: 1.45;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  /* Aged paper grit texture */
+  background-image: 
+    radial-gradient(rgba(26, 26, 26, 0.08) 1.2px, transparent 1.2px),
+    linear-gradient(rgba(26, 26, 26, 0.03) 1px, transparent 1px);
+  background-size: 14px 14px, 100% 28px;
+}
+
+/* ==========================================================================
+   TEXTURES & PATTERNS: HEAVY GRUNGE, HALFTONE DOTS, CIRCUITRY
+   ========================================================================== */
+.texture-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+}
+
+/* Halftone Screen Overlay */
+.halftone-dots {
+  background-image: radial-gradient(circle, rgba(26, 26, 26, 0.14) 1.2px, transparent 1.2px);
+  background-size: 5px 5px;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+/* Scratched Film & Dust */
+.film-grit {
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(26, 26, 26, 0.03) 0px,
+      rgba(26, 26, 26, 0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  opacity: 0.7;
+  mix-blend-mode: darken;
+}
+
+/* Faint Ghosted Circuitry in Background */
+.circuit-traces {
+  background-image: 
+    linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.6;
+}
+
+/* Scanline Jitter Overlay */
+.jitter-scanline {
+  background: linear-gradient(rgba(220, 20, 60, 0.015) 50%, rgba(26, 26, 26, 0.03) 50%);
+  background-size: 100% 4px;
+}
+
+/* ==========================================================================
+   ANIMATION & MOTION: STOP-MOTION, LOW-FRAME-RATE JITTER & FLICKER
+   ========================================================================== */
+@keyframes stopMotionJitter {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-2px, 2px) rotate(-0.6deg); }
+  50% { transform: translate(2px, -1px) rotate(0.8deg); }
+  75% { transform: translate(-1px, -2px) rotate(-0.3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes fastJitter {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-2px, 0); }
+  80% { transform: translate(1px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes scriptJerkyDraw {
+  0% { transform: rotate(-5deg) scale(1); filter: drop-shadow(2px 2px 0 var(--charcoal-black)); }
+  33% { transform: rotate(-3.5deg) scale(1.02) translate(2px, -1px); }
+  66% { transform: rotate(-6deg) scale(0.98) translate(-1px, 2px); }
+  100% { transform: rotate(-5deg) scale(1); filter: drop-shadow(2px 2px 0 var(--charcoal-black)); }
+}
+
+@keyframes stopMotionMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes glitchColorSplit {
+  0% { text-shadow: 3px 0 var(--crimson-red), -3px 0 var(--muted-gold); }
+  50% { text-shadow: -2px 0 var(--crimson-red), 2px 0 var(--charcoal-black); }
+  100% { text-shadow: 3px 0 var(--crimson-red), -3px 0 var(--muted-gold); }
+}
+
+.jitter-element {
+  animation: stopMotionJitter 0.4s steps(4) infinite;
+}
+
+.jitter-fast {
+  animation: fastJitter 0.25s steps(2) infinite;
+}
+
+.stop-motion-script {
+  animation: scriptJerkyDraw 0.5s steps(3) infinite;
+}
+
+/* =========================================================
+   COMPONENT 1: THE "HERO BANNER"
+   ========================================================= */
+.hero-crimson-ticker {
+  background-color: var(--crimson-red);
+  color: var(--paper-bg);
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  padding: 0.65rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 3px solid var(--charcoal-black);
+  border-bottom: 3px solid var(--charcoal-black);
+  box-shadow: 0 4px 0 var(--charcoal-black);
+  position: relative;
+  z-index: 100;
+}
+
+.hero-crimson-ticker.bottom-ticker {
+  margin-top: 4rem;
+}
+
+.ticker-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: stopMotionMarquee 16s steps(28) infinite;
+}
+
+.ticker-inner.reverse-scroll {
+  animation-direction: reverse;
+}
+
+.ticker-text {
+  display: inline-block;
+  padding-right: 2.5rem;
+}
+
+/* =========================================================
+   ZINE MASTHEAD HEADER
+   ========================================================= */
+.zine-masthead {
+  background: var(--paper-bg);
+  border-bottom: 3px solid var(--charcoal-black);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  box-shadow: 0 5px 0 var(--charcoal-black);
+}
+
+.masthead-wrapper {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.masthead-brand-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.zine-issue-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--crimson-red);
+}
+
+.zine-brand-link {
+  text-decoration: none;
+  color: var(--charcoal-black);
+}
+
+.zine-brand-stamp {
+  font-family: var(--font-headline);
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  padding: 0.15rem 0.65rem;
+  display: inline-block;
+  transform: rotate(-1deg);
+  box-shadow: 3px 3px 0 var(--crimson-red);
+}
+
+.zine-author-sub {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--charcoal-black);
+  margin-top: 4px;
+}
+
+.masthead-specs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specs-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--muted-gold);
+  color: var(--charcoal-black);
+  padding: 0.1rem 0.5rem;
+}
+
+.specs-text {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: var(--charcoal-black);
+}
+
+.zine-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.zine-nav-link {
+  font-family: var(--font-headline);
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--charcoal-black);
+  font-weight: 900;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid transparent;
+  transition: none;
+}
+
+.zine-nav-link:hover {
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+  border-color: var(--charcoal-black);
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.zine-toggle-btn {
+  display: none;
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  border: 2px solid var(--charcoal-black);
+  font-family: var(--font-headline);
+  font-size: 1.1rem;
+  font-weight: 900;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--crimson-red);
+}
+
+/* Mobile Drawer */
+.zine-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 340px;
+  height: 100vh;
+  background: var(--paper-bg);
+  border-left: 4px solid var(--charcoal-black);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: right 0.15s steps(3);
+}
+
+.zine-drawer.active {
+  right: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--charcoal-black);
+  padding-bottom: 1rem;
+}
+
+.drawer-heading {
+  font-family: var(--font-headline);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--crimson-red);
+}
+
+.drawer-close {
+  background: transparent;
+  border: none;
+  font-size: 2.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.drawer-links-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.drawer-link {
+  font-family: var(--font-headline);
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--charcoal-black);
+}
+
+.drawer-link:hover {
+  color: var(--crimson-red);
+}
+
+.drawer-footer-stamp {
+  border-top: 2px dashed var(--charcoal-black);
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   TORN PAPER EDGES & TAPE STRIPS (SPEC DNA)
+   ========================================================= */
+.torn-card-edge {
+  clip-path: polygon(
+    0% 2px, 3% 0px, 8% 3px, 14% 1px, 22% 4px, 30% 0px, 41% 3px, 50% 1px, 62% 4px, 73% 0px, 85% 3px, 94% 1px, 100% 2px,
+    100% calc(100% - 2px), 96% 100%, 89% calc(100% - 3px), 80% 100%, 71% calc(100% - 2px), 60% 100%, 48% calc(100% - 3px), 38% 100%, 25% calc(100% - 2px), 15% 100%, 6% calc(100% - 3px), 0% calc(100% - 1px)
+  );
+  position: relative;
+}
+
+/* Tape Strips */
+.tape-strip {
+  position: absolute;
+  width: 95px;
+  height: 28px;
+  background-color: var(--tape-color);
+  border: 1px dashed rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.tape-tl {
+  top: -14px;
+  left: 20px;
+  transform: rotate(-8deg);
+}
+
+.tape-tr {
+  top: -14px;
+  right: 25px;
+  transform: rotate(7deg);
+}
+
+.tape-br {
+  bottom: -14px;
+  right: 30px;
+  transform: rotate(5deg);
+}
+
+.poster-pin {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--charcoal-black);
+  box-shadow: 2px 2px 0 var(--charcoal-black);
+  z-index: 10;
+}
+
+.pin-red { background: var(--crimson-red); }
+.pin-gold { background: var(--muted-gold); }
+
+/* Rubber Stamps */
+.rubber-stamp {
+  position: absolute;
+  border: 3px dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-headline);
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.stamp-crimson {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  border-color: var(--crimson-red);
+  color: var(--crimson-red);
+  font-size: 0.7rem;
+  top: 15px;
+  right: 25px;
+  transform: rotate(15deg);
+}
+
+.stamp-charcoal {
+  padding: 0.4rem 0.8rem;
+  border-color: var(--charcoal-black);
+  color: var(--charcoal-black);
+  font-size: 0.65rem;
+  bottom: 20px;
+  left: 20px;
+  transform: rotate(-10deg);
+}
+
+.stamp-gold {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border-color: var(--muted-gold);
+  color: var(--muted-gold);
+  font-size: 0.65rem;
+  top: 25px;
+  left: 30px;
+  transform: rotate(-18deg);
+}
+
+/* =========================================================
+   HERO SPREAD & DISTRESSED HEADLINE BLOCK
+   ========================================================= */
+.hero-spread {
+  padding: 50px 0 80px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.spread-container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.annotation-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.anno-tag {
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-mono);
+  box-shadow: 2px 2px 0 var(--charcoal-black);
+}
+
+.tag-gold { background: var(--muted-gold); color: var(--charcoal-black); transform: rotate(-1deg); }
+.tag-charcoal { background: var(--charcoal-black); color: var(--paper-bg); transform: rotate(1.5deg); }
+.tag-crimson { background: var(--crimson-red); color: var(--paper-bg); transform: rotate(-0.5deg); }
+
+.anno-arrow {
+  color: var(--charcoal-black);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+}
+
+/* COMPONENT 2: THE "DISTRESSED TEXT BLOCK" */
+.distressed-headline-block {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.headline-row {
+  font-family: var(--font-headline);
+  font-size: clamp(3.8rem, 13vw, 11rem);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: var(--charcoal-black);
+  display: flex;
+  flex-wrap: wrap;
+  animation: glitchColorSplit 2s steps(2) infinite;
+}
+
+.block-char {
+  display: inline-block;
+  transform: rotate(calc((var(--i, 0) - 1) * 0.5deg));
+}
+
+.block-char.space {
+  width: 0.25em;
+}
+
+.headline-row.row-two {
+  font-size: clamp(4.5rem, 16vw, 13.5rem);
+  margin-top: 0.5rem;
+}
+
+.crimson-tape-word {
+  color: var(--crimson-red);
+  background: var(--charcoal-black);
+  padding: 0 0.25em;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  box-shadow: 8px 8px 0 var(--charcoal-black);
+}
+
+/* COMPONENT 4: THE "SCRIPT ELEMENT" */
+.script-overlay {
+  position: absolute;
+  top: 40%;
+  right: 4%;
+  transform: rotate(-6deg);
+  z-index: 25;
+}
+
+.script-secondary-overlay {
+  position: absolute;
+  top: 10%;
+  right: 30%;
+  transform: rotate(5deg);
+  z-index: 25;
+}
+
+.brush-script-tag {
+  font-family: var(--font-script);
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  color: var(--charcoal-black);
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+  padding: 0.25rem 1.25rem;
+  border: 3px solid var(--charcoal-black);
+  box-shadow: 5px 5px 0 var(--charcoal-black);
+  display: inline-block;
+}
+
+.brush-script-tag.gold-brush {
+  background: var(--muted-gold);
+  color: var(--charcoal-black);
+  font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+}
+
+/* COMPONENT 3: THE "CENTRAL GRAPHIC" COLLAGE CONTAINER */
+.central-collage-box {
+  background: #ffffff;
+  border: 4px solid var(--charcoal-black);
+  padding: 3.5rem 2.5rem;
+  margin: 3.5rem 0;
+  box-shadow: 12px 12px 0 var(--charcoal-black);
+  position: relative;
+  transform: rotate(0.4deg);
+}
+
+.collage-badge {
+  display: inline-block;
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  transform: rotate(-1deg);
+}
+
+.collage-manifesto-text {
+  font-family: var(--font-headline);
+  font-size: clamp(1.35rem, 2.4vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1.35;
+  color: var(--charcoal-black);
+  letter-spacing: 0.5px;
+  max-width: 950px;
+  margin-bottom: 2.75rem;
+}
+
+.collage-buttons-cluster {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* PUNK BUTTONS */
+.punk-btn {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  padding: 1.1rem 2.2rem;
+  border: 3px solid var(--charcoal-black);
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: 5px 5px 0 var(--charcoal-black);
+  transition: none;
+}
+
+.btn-crimson {
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+}
+
+.btn-crimson:hover {
+  background: var(--charcoal-black);
+  color: var(--crimson-red);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--charcoal-black);
+}
+
+.btn-charcoal {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+}
+
+.btn-charcoal:hover {
+  background: var(--muted-gold);
+  color: var(--charcoal-black);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--charcoal-black);
+}
+
+.btn-gold {
+  background: var(--muted-gold);
+  color: var(--charcoal-black);
+}
+
+.btn-gold:hover {
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--charcoal-black);
+}
+
+.collage-attribution-stamp {
+  border-top: 3px dashed var(--charcoal-black);
+  padding-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--crimson-red);
+}
+
+.stamp-box {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  padding: 0.2rem 0.65rem;
+  display: inline-block;
+}
+
+.fragmented-notes-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.frag-pill {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transform: rotate(-1deg);
+  border: 1px dashed var(--muted-gold);
+}
+
+/* =========================================================
+   GENERIC SPREAD SECTIONS & TITLE BLOCKS
+   ========================================================= */
+.spread-section {
+  padding: 90px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.section-stamp-heading {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.stamp-banner {
+  display: inline-block;
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  padding: 0.25rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  transform: rotate(-1.5deg);
+}
+
+.stamp-banner.banner-gold {
+  background: var(--muted-gold);
+  color: var(--charcoal-black);
+}
+
+.stamp-banner.banner-red {
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+}
+
+.heavy-headline {
+  font-family: var(--font-headline);
+  font-size: clamp(3rem, 6.5vw, 5.2rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: var(--charcoal-black);
+}
+
+.heavy-headline em {
+  color: var(--crimson-red);
+  font-style: normal;
+}
+
+.handwritten-subtitle {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--charcoal-black);
+  display: block;
+  margin-top: 0.6rem;
+  transform: rotate(-2deg);
+}
+
+/* =========================================================
+   SELECTED WORKS COLLAGE POSTERS
+   ========================================================= */
+.works-posters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 3.5rem;
+}
+
+.work-poster {
+  background: #ffffff;
+  border: 3.5px solid var(--charcoal-black);
+  padding: 2.75rem 2.25rem;
+  position: relative;
+  box-shadow: 9px 9px 0 var(--charcoal-black);
+  display: flex;
+  flex-direction: column;
+}
+
+.work-poster:hover {
+  transform: translate(-5px, -5px) rotate(-0.5deg);
+  box-shadow: 15px 15px 0 var(--charcoal-black);
+}
+
+.poster-dark {
+  background: var(--charcoal-black);
+  border-color: var(--muted-gold);
+}
+
+.text-paper { color: var(--paper-bg) !important; }
+.text-gold { color: var(--muted-gold) !important; }
+
+.poster-banner {
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.poster-banner.banner-gold {
+  background: var(--muted-gold);
+  color: var(--charcoal-black);
+}
+
+.poster-title {
+  font-family: var(--font-headline);
+  font-size: 2.3rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.poster-brush-label {
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  color: var(--crimson-red);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.poster-summary {
+  font-size: 0.95rem;
+  color: var(--charcoal-black);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.poster-spec-chips {
+  border-top: 2px dashed rgba(0, 0, 0, 0.2);
+  padding-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.poster-action-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.poster-btn {
+  font-family: var(--font-headline);
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-decoration: none;
+  padding: 0.7rem 1.35rem;
+  border: 2px solid var(--charcoal-black);
+  display: inline-block;
+  letter-spacing: 1px;
+  box-shadow: 4px 4px 0 var(--charcoal-black);
+}
+
+/* =========================================================
+   BLACKBOARD MANIFESTO (CHARCOAL #1A1A1A)
+   ========================================================= */
+.blackboard-spread {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+}
+
+.light-heading-block .heavy-headline {
+  color: var(--paper-bg);
+}
+
+.blackboard-container {
+  background: #111111;
+  border: 3.5px solid var(--paper-bg);
+  padding: 3.25rem 2.5rem;
+  box-shadow: 14px 14px 0 var(--crimson-red);
+}
+
+.blackboard-top-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed rgba(240, 234, 214, 0.3);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.bb-file-title {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--muted-gold);
+  letter-spacing: 2px;
+}
+
+.bb-author-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+  padding: 0.2rem 0.65rem;
+}
+
+.blackboard-code-terminal {
+  background: #080808;
+  border: 2px solid #282828;
+  padding: 1.75rem;
+  overflow-x: auto;
+  margin-bottom: 3.5rem;
+}
+
+.blackboard-code-terminal pre code {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+.code-comment { color: #777; }
+.code-keyword { color: var(--crimson-red); font-weight: 700; }
+.code-val { color: var(--muted-gold); }
+
+/* Post-It Notes Cluster */
+.postit-cluster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.25rem;
+}
+
+.postit-card {
+  padding: 2.25rem 1.85rem;
+  border: 2.5px solid var(--charcoal-black);
+  position: relative;
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.5);
+  color: var(--charcoal-black);
+}
+
+.postit-pin {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--crimson-red);
+  border: 2px solid var(--charcoal-black);
+}
+
+.postit-yellow { background: #fef08a; transform: rotate(-1.5deg); }
+.postit-crimson { background: #fca5a5; transform: rotate(2deg); }
+.postit-white { background: #ffffff; transform: rotate(-1deg); }
+
+.postit-card h4 {
+  font-family: var(--font-headline);
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+}
+
+.postit-card p {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   TECHNICAL DOSSIER
+   ========================================================= */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.75rem;
+}
+
+.dossier-folder {
+  background: #ffffff;
+  border: 3.5px solid var(--charcoal-black);
+  padding: 2.75rem 2rem;
+  box-shadow: 9px 9px 0 var(--charcoal-black);
+  position: relative;
+}
+
+.folder-tab {
+  position: absolute;
+  top: -26px;
+  left: 20px;
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.85rem;
+  letter-spacing: 1px;
+}
+
+.folder-title {
+  font-family: var(--font-headline);
+  font-size: 1.65rem;
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--charcoal-black);
+  padding-bottom: 0.5rem;
+}
+
+.folder-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   DISPATCH / TELEGRAM
+   ========================================================= */
+.telegram-dispatch-card {
+  background: #ffffff;
+  border: 3.5px solid var(--charcoal-black);
+  padding: 3.25rem 2.5rem;
+  box-shadow: 12px 12px 0 var(--crimson-red);
+  position: relative;
+}
+
+.telegram-stamp {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  border: 2px dashed var(--crimson-red);
+  color: var(--crimson-red);
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-headline);
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  transform: rotate(4deg);
+}
+
+.telegram-entries {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+}
+
+.telegram-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 0;
+  border-bottom: 2px dashed var(--charcoal-black);
+  text-decoration: none;
+  color: inherit;
+}
+
+.telegram-line:not(.static-line):hover {
+  background: var(--paper-bg);
+  padding-left: 1rem;
+}
+
+.entry-tag {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--crimson-red);
+  width: 220px;
+}
+
+.entry-value {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-grow: 1;
+}
+
+.entry-cta {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.entry-status {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  padding: 0.2rem 0.65rem;
+}
+
+.telegram-footer-bar {
+  border-top: 3px solid var(--charcoal-black);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-signature {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--charcoal-black);
+  transform: rotate(-2.5deg);
+}
+
+.footer-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================================
+   ZINE FOOTER (DEVELOPER ATTRIBUTION)
+   ========================================================= */
+.zine-footer {
+  background: var(--paper-bg);
+  border-top: 3.5px solid var(--charcoal-black);
+  padding: 4.5rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-wrapper {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-author-headline {
+  font-family: var(--font-headline);
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--charcoal-black);
+  letter-spacing: 1px;
+}
+
+.footer-attribution-callout {
+  font-size: 1.15rem;
+  color: var(--charcoal-black);
+  margin-top: 0.35rem;
+}
+
+.footer-attribution-callout strong {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  padding: 0.2rem 0.6rem;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.footer-sub-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.footer-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.85rem;
+}
+
+.footer-stamp-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.footer-top-btn {
+  font-family: var(--font-headline);
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-decoration: none;
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+  padding: 0.4rem 0.95rem;
+  border: 2.5px solid var(--charcoal-black);
+  box-shadow: 3px 3px 0 var(--charcoal-black);
+  display: inline-block;
+  transform: rotate(-1deg);
+}
+
+.footer-top-btn:hover {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 900px) {
+  .script-overlay {
+    position: static;
+    margin-top: 1.5rem;
+    transform: rotate(-3deg);
+  }
+
+  .telegram-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .entry-tag {
+    width: 100%;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-right-col {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .zine-nav, .masthead-specs {
+    display: none;
+  }
+
+  .zine-toggle-btn {
+    display: block;
+  }
+
+  .headline-row {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .headline-row.row-two {
+    font-size: clamp(3.5rem, 18vw, 6.5rem);
+  }
+
+  .works-posters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .central-collage-box {
+    padding: 2.25rem 1.5rem;
+  }
+}

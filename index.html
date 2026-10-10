@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  ==========================================================================
+  GRUNGE COLLAGE MOTION GRAPHICS PORTFOLIO
+  Developed by S. M. Mahmud Iqbal
+  Repository: https://github.com/SMMahmudIqbal/portfolio
+  ==========================================================================
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="S. M. Mahmud Iqbal">
+  <meta name="description" content="Grunge Collage Motion Graphics Portfolio of S. M. Mahmud Iqbal. Food Process Engineering & Air-Gapped Systems Architecture. Developed by S. M. Mahmud Iqbal.">
+  <meta property="og:title" content="S. M. Mahmud Iqbal /// RAW COLLAGE MOTION /// 2026">
+  <meta property="og:description" content="Raw, Chaotic Energy Punk Zine. Developed by S. M. Mahmud Iqbal.">
+  <title>S. M. Mahmud Iqbal /// RAW COLLAGE MOTION /// 2026</title>
+
+  <!-- Google Fonts: Oswald / Impact, Permanent Marker, Roboto Mono, Rock Salt -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;900&family=Permanent+Marker&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="grunge-body">
+
+  <!-- SVG Filter Definitions for Ink Bleed & Grunge -->
+  <svg class="svg-defs" aria-hidden="true" width="0" height="0">
+    <defs>
+      <filter id="ink-bleed">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Global Physical Texture Overlays -->
+  <div class="texture-layer film-grit" aria-hidden="true"></div>
+  <div class="texture-layer halftone-dots" aria-hidden="true"></div>
+  <div class="texture-layer circuit-traces" aria-hidden="true"></div>
+  <div class="texture-layer jitter-scanline" aria-hidden="true"></div>
+
+  <!-- COMPONENT 1: THE "HERO BANNER" (Top Crimson Red Stop-Motion Jitter Marquee) -->
+  <div class="hero-crimson-ticker top-ticker jitter-fast">
+    <div class="ticker-inner" id="ticker-top">
+      <span class="ticker-text">// YEAR 2026 /// SMMI SYSTEMS ARCHITECTURE /// RAW COLLAGE /// FOOD KINETICS /// AIR-GAPPED ANDROID /// DEVELOPED BY S. M. MAHMUD IQBAL /// STOP-MOTION JITTER /// DHAKA [23.81° N, 90.41° E] /// ISSUE #09 ///</span>
+      <span class="ticker-text">// YEAR 2026 /// SMMI SYSTEMS ARCHITECTURE /// RAW COLLAGE /// FOOD KINETICS /// AIR-GAPPED ANDROID /// DEVELOPED BY S. M. MAHMUD IQBAL /// STOP-MOTION JITTER /// DHAKA [23.81° N, 90.41° E] /// ISSUE #09 ///</span>
+    </div>
+  </div>
+
+  <!-- ZINE MASTHEAD HEADER -->
+  <header class="zine-masthead">
+    <div class="masthead-wrapper">
+      <div class="masthead-brand-block">
+        <span class="zine-issue-tag">VOL. XXVI // ISSUE 09</span>
+        <a href="#hero" class="zine-brand-link">
+          <span class="zine-brand-stamp">S. M. MAHMUD IQBAL</span>
+        </a>
+        <span class="zine-author-sub">DEVELOPED BY S. M. MAHMUD IQBAL</span>
+      </div>
+
+      <div class="masthead-specs">
+        <span class="specs-pill">[REF: SMMI_01]</span>
+        <span class="specs-text">AUTHENTIC RAW SIGNAL &bull; NO DIGITAL GLOSS</span>
+      </div>
+
+      <nav class="zine-nav">
+        <a href="#works" class="zine-nav-link">[01:WORKS]</a>
+        <a href="#manifesto" class="zine-nav-link">[02:AXIOMS]</a>
+        <a href="#dossier" class="zine-nav-link">[03:SPECS]</a>
+        <a href="#dispatch" class="zine-nav-link">[04:DISPATCH]</a>
+      </nav>
+
+      <button id="zine-drawer-toggle" class="zine-toggle-btn" aria-label="Open Navigation">
+        <span>INDEX &equiv;</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="zine-drawer" class="zine-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-heading">UNDERGROUND ZINE INDEX</span>
+      <button id="zine-drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <div class="drawer-links-stack">
+      <a href="#hero" class="drawer-link">00 // COVER SPREAD</a>
+      <a href="#works" class="drawer-link">01 // COMBAT DEPLOYMENTS</a>
+      <a href="#manifesto" class="drawer-link">02 // KINETIC AXIOMS</a>
+      <a href="#dossier" class="drawer-link">03 // TECHNICAL DOSSIER</a>
+      <a href="#dispatch" class="drawer-link">04 // WIRE TRANSMISSION</a>
+    </div>
+    <div class="drawer-footer-stamp">
+      <p>DEVELOPED BY S. M. MAHMUD IQBAL</p>
+      <span>DHAKA &bull; 23.8103° N, 90.4125° E</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SPREAD: COLLAGE OF MASSIVE DISTRESSED TYPE & TORN ELEMENTS -->
+    <section id="hero" class="hero-spread">
+      <div class="spread-container">
+
+        <!-- Technical Design Annotations (B1, L2, S3, Arrows, Lines) -->
+        <div class="annotation-ribbon">
+          <div class="anno-tag tag-gold">B1 // LOC: 23.81° N, 90.41° E</div>
+          <div class="anno-tag tag-charcoal">L2 // PROTOCOL: AIR-GAPPED</div>
+          <div class="anno-tag tag-crimson">S3 // ARR: Q10=2.0</div>
+          <div class="anno-arrow">&darr; RUNNING RAW_SIGNAL_STREAM</div>
+        </div>
+
+        <!-- COMPONENT 2: THE "DISTRESSED TEXT BLOCK" -->
+        <div class="distressed-headline-block">
+          <div class="headline-row row-one jitter-element">
+            <span class="block-char">S</span>
+            <span class="block-char">.</span>
+            <span class="block-char">M</span>
+            <span class="block-char">.</span>
+            <span class="block-char space">&nbsp;</span>
+            <span class="block-char">M</span>
+            <span class="block-char">A</span>
+            <span class="block-char">H</span>
+            <span class="block-char">M</span>
+            <span class="block-char">U</span>
+            <span class="block-char">D</span>
+          </div>
+
+          <div class="headline-row row-two jitter-element">
+            <span class="crimson-tape-word">IQBAL</span>
+          </div>
+
+          <!-- COMPONENT 4: THE "SCRIPT ELEMENT" (Hand-Drawn Brush Lettering) -->
+          <div class="script-overlay stop-motion-script">
+            <span class="brush-script-tag">Raw Kinetic Energy!</span>
+          </div>
+
+          <div class="script-secondary-overlay stop-motion-script">
+            <span class="brush-script-tag gold-brush">100% Offline Android!</span>
+          </div>
+        </div>
+
+        <!-- COMPONENT 3: THE "CENTRAL GRAPHIC" COLLAGE CONTAINER -->
+        <div class="central-collage-box torn-card-edge jitter-element">
+          <!-- Tape Strips on Corners -->
+          <div class="tape-strip tape-tl"></div>
+          <div class="tape-strip tape-tr"></div>
+          <div class="tape-strip tape-br"></div>
+
+          <!-- Physical Rubber Stamps -->
+          <div class="rubber-stamp stamp-crimson jitter-stamp-1">
+            <span>OFFLINE<br>AIR-GAPPED<br>APPROVED</span>
+          </div>
+
+          <div class="rubber-stamp stamp-charcoal jitter-stamp-2">
+            <span>FOOD KINETICS<br>ASLT MODEL<br>VERIFIED SMMI</span>
+          </div>
+
+          <div class="rubber-stamp stamp-gold jitter-stamp-3">
+            <span>2026<br>&starf;&starf;&starf;<br>DHAKA</span>
+          </div>
+
+          <!-- Collage Manifesto Content -->
+          <div class="collage-badge">
+            <span class="badge-inner">&diams; SYSTEMS ARCHITECTURE &bull; BIOLOGICAL KINETICS &bull; VIBE CODING &diams;</span>
+          </div>
+
+          <p class="collage-manifesto-text">
+            FOOD PROCESS ENGINEERING IN TRAINING &bull; PRIVACY-FIRST AIR-GAPPED ANDROID &bull; ARRHENIUS DEGRADATION TRAJECTORIES &bull; REACTIVE TACTILE EXPERIENCES &bull; ZERO TRACKING TELEMETRY.
+          </p>
+
+          <!-- Raw Action Buttons -->
+          <div class="collage-buttons-cluster">
+            <a href="#works" class="punk-btn btn-crimson">
+              <span>EXPLORE DEPLOYMENTS &darr;</span>
+            </a>
+            <a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer" class="punk-btn btn-charcoal">
+              <span>GITHUB ARCHIVE &nearr;</span>
+            </a>
+            <a href="mailto:smmahmudiqbal@gmail.com" class="punk-btn btn-gold">
+              <span>DIRECT WIRE &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Prominent Stamped Attribution -->
+          <div class="collage-attribution-stamp">
+            <span class="stamp-box">★ DEVELOPED BY S. M. MAHMUD IQBAL ★</span>
+          </div>
+        </div>
+
+        <!-- Fragmented Design Annotations & Cutouts -->
+        <div class="fragmented-notes-row">
+          <div class="frag-pill">[FIG_A: ARRHENIUS_MODEL]</div>
+          <div class="frag-pill">[FIG_B: ZERO_NETWORK_PERMS]</div>
+          <div class="frag-pill">[FIG_C: JETPACK_COMPOSE_2.0]</div>
+          <div class="frag-pill">[FIG_D: ASLT_FOOD_SAFETY]</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 1: SELECTED WORKS (COLLAGE POSTERS BREAKING THE GRID) -->
+    <section id="works" class="spread-section works-spread">
+      <div class="spread-container">
+
+        <div class="section-stamp-heading jitter-element">
+          <div class="stamp-banner">CATALOGUE // 2026</div>
+          <h2 class="heavy-headline">SELECTED <em>WORKS</em></h2>
+          <span class="handwritten-subtitle">Fragmented &bull; Physical Media &bull; Code in Production</span>
+        </div>
+
+        <div class="works-posters-grid">
+
+          <!-- 01. ShelfSense -->
+          <article class="work-poster torn-card-edge jitter-element">
+            <div class="poster-pin pin-red"></div>
+            <div class="poster-banner banner-red">SYS.01 // FOOD QUALITY MODELER</div>
+            <h3 class="poster-title">SHELFSENSE</h3>
+            <span class="poster-brush-label">Arrhenius Kinetics</span>
+            <p class="poster-summary">
+              Predictive Shelf Life Engine for Food Exporters. Formulates Arrhenius degradation trajectories, WVTR/OTR packaging barrier transmission models, and automated export compliance certification.
+            </p>
+            <div class="poster-spec-chips">
+              <span>TECH: [ARRHENIUS_Q10] [ASLT_TESTING] [NEO-BRUTALIST] [HTML/JS]</span>
+            </div>
+            <div class="poster-action-group">
+              <a href="https://shelfsense-lemon.vercel.app" target="_blank" rel="noopener noreferrer" class="poster-btn btn-crimson">
+                LIVE ENGINE &rarr;
+              </a>
+              <a href="https://github.com/SMMahmudIqbal/shelfsense" target="_blank" rel="noopener noreferrer" class="poster-btn btn-charcoal">
+                SOURCE
+              </a>
+            </div>
+          </article>
+
+          <!-- 02. FileBodlai -->
+          <article class="work-poster torn-card-edge jitter-element poster-dark">
+            <div class="poster-pin pin-gold"></div>
+            <div class="poster-banner banner-gold">SYS.02 // PRIVACY SOVEREIGNTY</div>
+            <h3 class="poster-title text-paper">FILEBODLAI</h3>
+            <span class="poster-brush-label text-gold">100% Offline Android!</span>
+            <p class="poster-summary text-paper">
+              Next-generation 100% offline private file processing studio for Android. Built with zero network permissions, Kotlin 2.0, Jetpack Compose, native Scoped Storage, and on-device PDF compression.
+            </p>
+            <div class="poster-spec-chips text-gold">
+              <span>TECH: [KOTLIN_2.0] [JETPACK_COMPOSE] [ZERO_NETWORK_PERMS]</span>
+            </div>
+            <div class="poster-action-group">
+              <a href="https://github.com/SMMahmudIqbal/FileBodlai" target="_blank" rel="noopener noreferrer" class="poster-btn btn-gold">
+                REPOSITORY &nearr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 03. Fluid Tracker Pro -->
+          <article class="work-poster torn-card-edge jitter-element">
+            <div class="poster-pin pin-red"></div>
+            <div class="poster-banner banner-red">SYS.03 // SENSOR DYNAMICS</div>
+            <h3 class="poster-title">FLUID TRACKER PRO</h3>
+            <span class="poster-brush-label">Physics Canvas Engine</span>
+            <p class="poster-summary">
+              A 3D minimalist liquid-glass wellness ecosystem for Android. Powered by dual-sine wave canvas physics, accelerometer tilt tracking, and interactive home screen widgets.
+            </p>
+            <div class="poster-spec-chips">
+              <span>TECH: [SENSOR_MANAGER] [GLANCE_WIDGETS] [CANVAS_PHYSICS]</span>
+            </div>
+            <div class="poster-action-group">
+              <a href="https://github.com/SMMahmudIqbal/fluid-tracker-pro" target="_blank" rel="noopener noreferrer" class="poster-btn btn-crimson">
+                REPOSITORY &nearr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 04. Bangladesh Food Passport -->
+          <article class="work-poster torn-card-edge jitter-element">
+            <div class="poster-pin pin-red"></div>
+            <div class="poster-banner banner-red">SYS.04 // CULTURAL CARTOGRAPHY</div>
+            <h3 class="poster-title">BD FOOD PASSPORT</h3>
+            <span class="poster-brush-label">64 Districts Vector SVG</span>
+            <p class="poster-summary">
+              Interactive culinary cartography across all 64 districts of Bangladesh. High-performance client-side vector SVG map traversal, passport stamp collection, and dynamic social export cards.
+            </p>
+            <div class="poster-spec-chips">
+              <span>TECH: [VECTOR_SVG] [CANVAS_API] [JAVASCRIPT_ENGINE]</span>
+            </div>
+            <div class="poster-action-group">
+              <a href="https://bd-food-passport.vercel.app" target="_blank" rel="noopener noreferrer" class="poster-btn btn-crimson">
+                LIVE APP &rarr;
+              </a>
+              <a href="https://github.com/SMMahmudIqbal/bd-food-passport" target="_blank" rel="noopener noreferrer" class="poster-btn btn-charcoal">
+                SOURCE
+              </a>
+            </div>
+          </article>
+
+          <!-- 05. Bahana -->
+          <article class="work-poster torn-card-edge jitter-element poster-dark">
+            <div class="poster-pin pin-gold"></div>
+            <div class="poster-banner banner-gold">SYS.05 // LINGUISTIC GENERATION</div>
+            <h3 class="poster-title text-paper">BAHANA</h3>
+            <span class="poster-brush-label text-gold">Excuse Generator!</span>
+            <p class="poster-summary text-paper">
+              The Bangladeshi excuse engine. Contextual cultural linguistics featuring dual Bangla/Banglish typography, social story card renderer, and tactile keyboard triggers.
+            </p>
+            <div class="poster-spec-chips text-gold">
+              <span>TECH: [REACT_19] [TYPESCRIPT] [TAILWIND_CSS]</span>
+            </div>
+            <div class="poster-action-group">
+              <a href="https://bahana-app.vercel.app" target="_blank" rel="noopener noreferrer" class="poster-btn btn-gold">
+                LIVE APP &rarr;
+              </a>
+              <a href="https://github.com/SMMahmudIqbal/bahana" target="_blank" rel="noopener noreferrer" class="poster-btn btn-charcoal">
+                SOURCE
+              </a>
+            </div>
+          </article>
+
+          <!-- 06. SnapFlow -->
+          <article class="work-poster torn-card-edge jitter-element">
+            <div class="poster-pin pin-red"></div>
+            <div class="poster-banner banner-red">SYS.06 // MEDIA ENGINE</div>
+            <h3 class="poster-title">SNAPFLOW</h3>
+            <span class="poster-brush-label">Swiss Brutalism</span>
+            <p class="poster-summary">
+              Swiss Brutalist multi-platform media downloader interface. High contrast typography, robust client-side routing, and sleek streaming video parsing pipelines.
+            </p>
+            <div class="poster-spec-chips">
+              <span>TECH: [SWISS_BRUTALISM] [CSS_ARCHITECTURE] [JAVASCRIPT]</span>
+            </div>
+            <div class="poster-action-group">
+              <a href="https://github.com/SMMahmudIqbal/snapflow-media-downloader" target="_blank" rel="noopener noreferrer" class="poster-btn btn-crimson">
+                REPOSITORY &nearr;
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: KINETIC MANIFESTO & AXIOMS (DISTRESSED BLACKBOARD COLLAGE) -->
+    <section id="manifesto" class="spread-section blackboard-spread">
+      <div class="spread-container">
+
+        <div class="section-stamp-heading jitter-element light-heading-block">
+          <div class="stamp-banner banner-gold">FIELD DISPATCH // 02</div>
+          <h2 class="heavy-headline text-paper">ENGINEERING <em>AXIOMS</em></h2>
+          <span class="handwritten-subtitle text-crimson">Uncompromising Physics &amp; Code</span>
+        </div>
+
+        <div class="blackboard-container torn-card-edge jitter-element">
+          <div class="blackboard-top-strip">
+            <span class="bb-file-title">kinetics_manifesto.py</span>
+            <span class="bb-author-badge">OPERATOR: S. M. MAHMUD IQBAL</span>
+          </div>
+
+          <div class="blackboard-code-terminal">
+            <pre><code><span class="code-comment"># Raw Engineering Axioms &amp; Biological Constraints</span>
+<span class="code-comment"># Developed by S. M. Mahmud Iqbal</span>
+
+<span class="code-keyword">OFFLINE_FIRST</span>        = <span class="code-val">True</span>       <span class="code-comment"># Zero telemetry, 100% on-device sandbox</span>
+<span class="code-keyword">NETWORK_PERMISSIONS</span>  = <span class="code-val">0</span>          <span class="code-comment"># Air-gapped Android &amp; local persistence</span>
+<span class="code-keyword">ARRHENIUS_Q10_FACTOR</span> = <span class="code-val">2.0</span>        <span class="code-comment"># Reaction velocity doubling per 10°C spike</span>
+<span class="code-keyword">BOTULINUM_SAFE_PH</span>    = <span class="code-val">4.60</span>       <span class="code-comment"># Anaerobic spore germination threshold</span>
+<span class="code-keyword">MIN_WATER_ACTIVITY</span>   = <span class="code-val">0.60</span>       <span class="code-comment"># Microbial proliferation lower bound</span>
+<span class="code-keyword">UI_LATENCY_MAX_MS</span>    = <span class="code-val">16.6</span>       <span class="code-comment"># 60fps frame budget on custom shader canvas</span></code></pre>
+          </div>
+
+          <!-- Pinned Post-It Notes Cluster -->
+          <div class="postit-cluster">
+            <div class="postit-card postit-yellow jitter-element">
+              <span class="postit-pin"></span>
+              <h4>01. KINETIC MODELING</h4>
+              <p>Arrhenius temperature kinetics ($Q_{10}$) &amp; WVTR barrier simulations for export food safety.</p>
+            </div>
+
+            <div class="postit-card postit-crimson jitter-element">
+              <span class="postit-pin"></span>
+              <h4>02. ZERO TELEMETRY</h4>
+              <p>Air-gapped mobile applications with zero network permissions and scoped storage isolation.</p>
+            </div>
+
+            <div class="postit-card postit-white jitter-element">
+              <span class="postit-pin"></span>
+              <h4>03. VIBE CODING</h4>
+              <p>Translating theoretical food engineering into tactile reactive tools at breakneck speed.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: TECHNICAL DOSSIER -->
+    <section id="dossier" class="spread-section dossier-spread">
+      <div class="spread-container">
+
+        <div class="section-stamp-heading jitter-element">
+          <div class="stamp-banner">SPECS // DOSSIER</div>
+          <h2 class="heavy-headline">CAPABILITY <em>DOSSIER</em></h2>
+          <span class="handwritten-subtitle">Validated Under Extreme Constraints</span>
+        </div>
+
+        <div class="dossier-grid">
+          <div class="dossier-folder torn-card-edge jitter-element">
+            <div class="folder-tab">FILE_01</div>
+            <h3 class="folder-title">MOBILE &amp; ANDROID ARCHITECTURE</h3>
+            <ul class="folder-items">
+              <li>&bull; Kotlin 2.0 &amp; Modern Coroutines</li>
+              <li>&bull; Declarative Jetpack Compose Systems</li>
+              <li>&bull; Air-Gapped Zero-Permission Runtimes</li>
+              <li>&bull; Native Scoped Storage File Processing</li>
+              <li>&bull; SensorManager &amp; Dynamic Canvas Physics</li>
+              <li>&bull; Glance Interactive AppWidgets</li>
+            </ul>
+          </div>
+
+          <div class="dossier-folder torn-card-edge jitter-element">
+            <div class="folder-tab">FILE_02</div>
+            <h3 class="folder-title">REACTIVE WEB &amp; FRONTEND</h3>
+            <ul class="folder-items">
+              <li>&bull; TypeScript &amp; Modern JavaScript</li>
+              <li>&bull; React 19 Ecosystem &amp; Vite Pipelines</li>
+              <li>&bull; HTML5 Canvas Shader Dynamics</li>
+              <li>&bull; High-Performance SVG Cartography</li>
+              <li>&bull; Swiss Brutalist &amp; Grunge Typography</li>
+              <li>&bull; Stop-Motion Low-Frame-Rate Motion Graphics</li>
+            </ul>
+          </div>
+
+          <div class="dossier-folder torn-card-edge jitter-element">
+            <div class="folder-tab">FILE_03</div>
+            <h3 class="folder-title">FOOD PROCESS ENGINEERING</h3>
+            <ul class="folder-items">
+              <li>&bull; Accelerated Shelf-Life Testing (ASLT)</li>
+              <li>&bull; Arrhenius Degradation Kinetics</li>
+              <li>&bull; Water Activity ($A_w$) Control Thresholds</li>
+              <li>&bull; WVTR &amp; OTR Packaging Barrier Modeling</li>
+              <li>&bull; Export Compliance Quality Assurances</li>
+              <li>&bull; Thermal Inactivation &amp; Spore Safety</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: DIRECT TRANSMISSION / DISPATCH -->
+    <section id="dispatch" class="spread-section dispatch-spread">
+      <div class="spread-container">
+
+        <div class="section-stamp-heading jitter-element">
+          <div class="stamp-banner banner-red">TRANSMISSION CHANNEL</div>
+          <h2 class="heavy-headline">SEND <em>DISPATCH</em></h2>
+          <span class="handwritten-subtitle">Direct Line to Operator</span>
+        </div>
+
+        <div class="telegram-dispatch-card torn-card-edge jitter-element">
+          <div class="telegram-stamp">CONFIDENTIAL DISPATCH</div>
+
+          <div class="telegram-entries">
+            <a href="mailto:smmahmudiqbal@gmail.com" class="telegram-line">
+              <span class="entry-tag">WIRE / EMAIL</span>
+              <span class="entry-value">smmahmudiqbal@gmail.com</span>
+              <span class="entry-cta">[SEND WIRE &rarr;]</span>
+            </a>
+
+            <a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer" class="telegram-line">
+              <span class="entry-tag">NETWORK / GITHUB</span>
+              <span class="entry-value">github.com/SMMahmudIqbal</span>
+              <span class="entry-cta">[CONNECT &rarr;]</span>
+            </a>
+
+            <div class="telegram-line static-line">
+              <span class="entry-tag">OPERATOR NODE</span>
+              <span class="entry-value">Dhaka, Bangladesh (23.8103° N, 90.4125° E)</span>
+              <span class="entry-status">ACTIVE</span>
+            </div>
+          </div>
+
+          <div class="telegram-footer-bar">
+            <span class="footer-signature">S. M. Mahmud Iqbal</span>
+            <span class="footer-title">FOOD PROCESS ENGINEER &bull; SYSTEMS ARCHITECT</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- COMPONENT 1 (BOTTOM): THE "HERO BANNER" (Bottom Crimson Jitter Marquee) -->
+  <div class="hero-crimson-ticker bottom-ticker jitter-fast">
+    <div class="ticker-inner reverse-scroll" id="ticker-bottom">
+      <span class="ticker-text">// DEVELOPED BY S. M. MAHMUD IQBAL /// ISSUE 2026 /// STOP-MOTION GRUNGE COLLAGE /// FOOD KINETICS /// AIR-GAPPED ANDROID /// NO DIGITAL COMPROMISE ///</span>
+      <span class="ticker-text">// DEVELOPED BY S. M. MAHMUD IQBAL /// ISSUE 2026 /// STOP-MOTION GRUNGE COLLAGE /// FOOD KINETICS /// AIR-GAPPED ANDROID /// NO DIGITAL COMPROMISE ///</span>
+    </div>
+  </div>
+
+  <!-- ZINE FOOTER WITH PROMINENT DEVELOPER ATTRIBUTION -->
+  <footer class="zine-footer">
+    <div class="footer-wrapper">
+      <div class="footer-left-col">
+        <h3 class="footer-author-headline">S. M. MAHMUD IQBAL</h3>
+        <p class="footer-attribution-callout">
+          <strong>DEVELOPED BY S. M. MAHMUD IQBAL</strong>
+        </p>
+        <p class="footer-sub-text">
+          Food Process Engineering &bull; Modern Software Architecture &bull; Vibe Coding
+        </p>
+      </div>
+
+      <div class="footer-right-col">
+        <span class="footer-stamp-tag">ZINE VOL. 2026 // DHAKA, BANGLADESH</span>
+        <a href="#hero" class="footer-top-btn">[RETURN TO TOP &uarr;]</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
