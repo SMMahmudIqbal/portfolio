@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;900&family=Permanent+Marker&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Rock+Salt&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=20261010_4">
+  <link rel="stylesheet" href="style.css?v=20261010_5">
 </head>
 <body class="grunge-body">
 
@@ -72,9 +72,14 @@
         <a href="#dispatch" class="zine-nav-link">[04:DISPATCH]</a>
       </nav>
 
-      <button id="zine-drawer-toggle" class="zine-toggle-btn" aria-label="Open Navigation">
-        <span>INDEX &equiv;</span>
-      </button>
+      <div class="masthead-controls">
+        <button id="sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle Mechanical Sound Effects" title="Mechanical & Analog Sound FX (Web Audio API)">
+          <span class="sound-status-text">[AUDIO: OFF]</span>
+        </button>
+        <button id="zine-drawer-toggle" class="zine-toggle-btn" aria-label="Open Navigation">
+          <span>INDEX &equiv;</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -83,6 +88,11 @@
     <div class="drawer-header">
       <span class="drawer-heading">UNDERGROUND ZINE INDEX</span>
       <button id="zine-drawer-close" class="drawer-close">&times;</button>
+    </div>
+    <div class="drawer-audio-toggle-row">
+      <button id="drawer-sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle Mechanical Sound Effects">
+        <span class="sound-status-text">[AUDIO: OFF]</span>
+      </button>
     </div>
     <div class="drawer-links-stack">
       <a href="#hero" class="drawer-link">00 // COVER SPREAD</a>
@@ -547,6 +557,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261010_4"></script>
+  <script src="script.js?v=20261010_5"></script>
 </body>
 </html>

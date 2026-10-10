@@ -271,6 +271,51 @@ body.grunge-body {
   outline: none;
 }
 
+.masthead-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Mechanical Sound FX Toggle */
+.sound-toggle-btn {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  border: 2px solid var(--charcoal-black);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  box-shadow: 2.5px 2.5px 0 var(--crimson-red);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.sound-toggle-btn:hover,
+.sound-toggle-btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--crimson-red);
+  outline: none;
+}
+
+.sound-toggle-btn.is-active {
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+  border-color: var(--charcoal-black);
+  box-shadow: 2.5px 2.5px 0 var(--charcoal-black);
+}
+
+.sound-toggle-btn.is-active:hover {
+  background: var(--charcoal-black);
+  color: var(--crimson-red);
+  box-shadow: 4px 4px 0 var(--crimson-red);
+}
+
 .zine-toggle-btn {
   display: none;
   background: var(--charcoal-black);
@@ -282,6 +327,21 @@ body.grunge-body {
   padding: 0.4rem 0.8rem;
   cursor: pointer;
   box-shadow: 3px 3px 0 var(--crimson-red);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.zine-toggle-btn:hover,
+.zine-toggle-btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--crimson-red);
+  outline: none;
+}
+
+.drawer-audio-toggle-row {
+  margin: 1.25rem 0 0.5rem 0;
+  padding: 0.75rem 0;
+  border-top: 1px dashed rgba(26, 26, 26, 0.3);
+  border-bottom: 1px dashed rgba(26, 26, 26, 0.3);
 }
 
 /* Mobile Drawer */
@@ -1349,6 +1409,11 @@ body.grunge-body {
 
   .zine-toggle-btn {
     display: block;
+  }
+
+  .sound-toggle-btn {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.55rem;
   }
 
   .zine-masthead {
