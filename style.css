@@ -116,51 +116,15 @@ body.grunge-body {
 }
 
 /* ==========================================================================
-   COMPONENT 1: THE "HERO BANNER" (STABILIZED & CRISP)
-   ========================================================================== */
-.hero-crimson-ticker {
-  background-color: var(--crimson-red);
-  color: var(--paper-bg);
-  font-family: var(--font-headline);
-  font-weight: 900;
-  font-size: 1.05rem;
-  letter-spacing: 2px;
-  padding: 0.65rem 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 3px solid var(--charcoal-black);
-  border-bottom: 3px solid var(--charcoal-black);
-  box-shadow: 0 4px 0 var(--charcoal-black);
-  position: relative;
-  z-index: 100;
-}
-
-.hero-crimson-ticker.bottom-ticker {
-  margin-top: 5rem;
-}
-
-.ticker-inner {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
-}
-
-.ticker-text {
-  display: inline-block;
-  padding: 0 1rem;
-  flex-shrink: 0;
-}
-
-/* ==========================================================================
    ZINE MASTHEAD HEADER (STICKY WITH NO OVERLAP BUGS)
    ========================================================================== */
 .zine-masthead {
   background: var(--paper-bg);
-  border-bottom: 3px solid var(--charcoal-black);
+  border-bottom: 3.5px solid var(--charcoal-black);
   padding: 0.9rem 0;
   position: sticky;
   top: 0;
-  z-index: 90;
+  z-index: 100;
   box-shadow: 0 4px 0 var(--charcoal-black);
 }
 
