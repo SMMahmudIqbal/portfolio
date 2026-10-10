@@ -24,8 +24,8 @@ The official portfolio website of **S. M. Mahmud Iqbal**, built with a **Grunge 
   - Global grit, dust, and halftone dot pattern overlays.
   - Torn paper edge clip-paths and tape stamps.
   - Rubber stamps ("AIR-GAPPED APPROVED", "FOOD KINETICS SMMI", "EXP. 2026").
-  - Jittery stop-motion horizontal banners scrolling at low frame rates in opposite directions.
-  - Card hover state with abrupt micro-cuts and offset drop shadows.
+  - Rock-solid stability: zero automatic involuntary movement or motion sickness triggers; tactile interaction happens only on user intent (hover/click).
+  - Card hover state with crisp mechanical offsets and shadow shifts.
 
 ---
 

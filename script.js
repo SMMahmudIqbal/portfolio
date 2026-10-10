@@ -1,53 +1,32 @@
 /**
  * ==========================================================================
- * GRUNGE COLLAGE MOTION GRAPHICS CONTROLLER
+ * GRUNGE COLLAGE PORTFOLIO CONTROLLER
  * Developed by S. M. Mahmud Iqbal
  * 
- * Spec:
- * - High-Frequency Stop-Motion Jitter (Low-Frame-Rate Steps)
- * - Opposite Scroll Marquee Direction
- * - Raw Physical Media Tactility
+ * Clean, stable, accessible interaction engine:
+ * - Zero automatic jitter/movement (calm & readable by default)
+ * - Smooth scroll navigation with sticky header offset
+ * - Mobile zine drawer with Escape key and backdrop dismissal
+ * - Tactile hover/touch feedback without layout shifts
  * ==========================================================================
  */
 
 console.log(
-  "%c[RAW COLLAGE MOTION / 2026] Stop-Motion Physical Media Engine Active.\n%cDEVELOPED BY S. M. MAHMUD IQBAL\nhttps://github.com/SMMahmudIqbal/portfolio",
+  "%c[RAW COLLAGE / 2026] Stability & Accessibility Engine Active.\n%cDEVELOPED BY S. M. MAHMUD IQBAL\nhttps://github.com/SMMahmudIqbal/portfolio",
   "background: #1A1A1A; color: #DC143C; font-size: 14px; font-weight: 900; padding: 4px; border: 2px solid #DC143C;",
   "background: #C5A945; color: #1A1A1A; font-size: 11px; font-weight: bold; padding: 2px;"
 );
 
 document.addEventListener("DOMContentLoaded", () => {
-  initStopMotionJitter();
-  initZineDrawerNavigation();
-  initTactileCardInteractions();
+  initMobileDrawer();
+  initSmoothScroll();
+  initTactileInteractions();
 });
 
 /* =========================================================
-   1. STOP-MOTION LOW-FRAME-RATE JITTER SIMULATOR
+   1. MOBILE DRAWER NAVIGATION
    ========================================================= */
-function initStopMotionJitter() {
-  const jitterElements = document.querySelectorAll(".jitter-element");
-
-  // Every 240ms, simulate a frame of a 4fps physical stop-motion cut
-  setInterval(() => {
-    jitterElements.forEach((el) => {
-      // 35% chance per frame to apply a physical print offset
-      if (Math.random() < 0.35) {
-        const rot = (Math.random() * 1.8 - 0.9).toFixed(1);
-        const shiftX = (Math.random() * 3 - 1.5).toFixed(1);
-        const shiftY = (Math.random() * 3 - 1.5).toFixed(1);
-        el.style.transform = `translate(${shiftX}px, ${shiftY}px) rotate(${rot}deg)`;
-      } else {
-        el.style.transform = "none";
-      }
-    });
-  }, 240);
-}
-
-/* =========================================================
-   2. MOBILE ZINE DRAWER NAVIGATION
-   ========================================================= */
-function initZineDrawerNavigation() {
+function initMobileDrawer() {
   const toggleBtn = document.getElementById("zine-drawer-toggle");
   const closeBtn = document.getElementById("zine-drawer-close");
   const drawer = document.getElementById("zine-drawer");
@@ -58,36 +37,88 @@ function initZineDrawerNavigation() {
   function openDrawer() {
     drawer.classList.add("active");
     drawer.setAttribute("aria-hidden", "false");
+    toggleBtn.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
   }
 
   function closeDrawer() {
     drawer.classList.remove("active");
     drawer.setAttribute("aria-hidden", "true");
+    toggleBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
 
   toggleBtn.addEventListener("click", openDrawer);
   if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
 
+  // Close on link click
   links.forEach((l) => {
     l.addEventListener("click", closeDrawer);
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && drawer.classList.contains("active")) {
+      closeDrawer();
+    }
+  });
+
+  // Close when clicking outside drawer
+  document.addEventListener("click", (e) => {
+    if (
+      drawer.classList.contains("active") &&
+      !drawer.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      closeDrawer();
+    }
   });
 }
 
 /* =========================================================
-   3. TACTILE CARD CUT INTERACTIONS
+   2. SMOOTH SCROLL WITH STICKY HEADER OFFSET
    ========================================================= */
-function initTactileCardInteractions() {
+function initSmoothScroll() {
+  const navAnchors = document.querySelectorAll('a[href^="#"]');
+  const header = document.querySelector(".zine-masthead");
+  const headerHeight = header ? header.offsetHeight : 70;
+
+  navAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const targetId = anchor.getAttribute("href");
+      if (targetId === "#") return;
+
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 16;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        // Update URL hash without jumping
+        history.pushState(null, null, targetId);
+      }
+    });
+  });
+}
+
+/* =========================================================
+   3. TACTILE CARD HOVER & TOUCH FEEDBACK
+   ========================================================= */
+function initTactileInteractions() {
   const posters = document.querySelectorAll(".work-poster");
 
   posters.forEach((poster) => {
     poster.addEventListener("mouseenter", () => {
-      poster.style.filter = "contrast(1.12) brightness(0.97)";
+      poster.classList.add("is-hovered");
     });
 
     poster.addEventListener("mouseleave", () => {
-      poster.style.filter = "none";
+      poster.classList.remove("is-hovered");
     });
   });
 }
