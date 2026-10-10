@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileDrawer();
   initSmoothScroll();
   initTactileInteractions();
+  initGitHubRepoStats();
 });
 
 /* =========================================================
@@ -122,3 +123,61 @@ function initTactileInteractions() {
     });
   });
 }
+
+/* =========================================================
+   4. LIVE GITHUB REPOSITORY METRICS (PUNK TELEMETRY)
+   Developed by S. M. Mahmud Iqbal
+   Connects to GitHub API for live stars, branches, and tags.
+   ========================================================= */
+async function initGitHubRepoStats() {
+  const statContainers = document.querySelectorAll(".poster-github-stats[data-repo]");
+  if (!statContainers.length) return;
+
+  try {
+    const res = await fetch("https://api.github.com/users/SMMahmudIqbal/repos?per_page=100", {
+      headers: { Accept: "application/vnd.github.v3+json" }
+    });
+
+    if (res.ok) {
+      const repos = await res.json();
+      const repoMap = new Map();
+      repos.forEach((repo) => repoMap.set(repo.name.toLowerCase(), repo));
+
+      statContainers.forEach((container) => {
+        const repoName = container.getAttribute("data-repo");
+        if (!repoName) return;
+        const data = repoMap.get(repoName.toLowerCase());
+        if (data) {
+          const starEl = container.querySelector(".stars-count");
+          if (starEl && typeof data.stargazers_count === "number") {
+            starEl.textContent = data.stargazers_count;
+          }
+          const branchEl = container.querySelector(".branch-name");
+          if (branchEl && data.default_branch) {
+            branchEl.textContent = data.default_branch;
+          }
+        }
+      });
+    }
+
+    // Fetch FileBodlai latest release tag if possible
+    try {
+      const relRes = await fetch("https://api.github.com/repos/SMMahmudIqbal/FileBodlai/releases/latest", {
+        headers: { Accept: "application/vnd.github.v3+json" }
+      });
+      if (relRes.ok) {
+        const relData = await relRes.json();
+        const fileBodlaiCard = document.querySelector('.poster-github-stats[data-repo="FileBodlai"]');
+        if (fileBodlaiCard && relData.tag_name) {
+          const releaseEl = fileBodlaiCard.querySelector(".release-tag");
+          if (releaseEl) releaseEl.textContent = relData.tag_name;
+        }
+      }
+    } catch (_) {
+      // Retain graceful static fallback
+    }
+  } catch (err) {
+    console.info("[GitHub Stats] Kept static fallback metrics:", err.message);
+  }
+}
+

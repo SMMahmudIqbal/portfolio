@@ -414,11 +414,22 @@ body.grunge-body {
 .pin-red { background: var(--crimson-red); }
 .pin-gold { background: var(--muted-gold); }
 
-/* Rubber Stamps (Made non-intrusive and non-overlapping) */
-.rubber-stamp {
-  position: absolute;
-  border: 3px dashed;
+/* =========================================================
+   COLLAGE STAMPS BAR & RUBBER STAMPS (IN-FLOW, NON-COLLIDING)
+   ========================================================= */
+.collage-stamps-bar {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px dashed rgba(26, 26, 26, 0.2);
+}
+
+.rubber-stamp {
+  border: 3px dashed;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -426,43 +437,42 @@ body.grunge-body {
   font-weight: 900;
   letter-spacing: 1px;
   line-height: 1.2;
-  pointer-events: none;
-  z-index: 5;
-  opacity: 0.88;
+  opacity: 0.92;
+  user-select: none;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.rubber-stamp:hover {
+  transform: scale(1.04);
 }
 
 .stamp-crimson {
-  width: 90px;
-  height: 90px;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
   border-color: var(--crimson-red);
   color: var(--crimson-red);
   font-size: 0.65rem;
-  top: 15px;
-  right: 25px;
-  transform: rotate(12deg);
-}
-
-.stamp-charcoal {
-  padding: 0.35rem 0.75rem;
-  border-color: var(--charcoal-black);
-  color: var(--charcoal-black);
-  font-size: 0.65rem;
-  bottom: 20px;
-  left: 20px;
-  transform: rotate(-6deg);
+  transform: rotate(5deg);
 }
 
 .stamp-gold {
-  width: 75px;
-  height: 75px;
+  width: 82px;
+  height: 82px;
   border-radius: 50%;
   border-color: var(--muted-gold);
   color: var(--muted-gold);
-  font-size: 0.6rem;
-  top: 20px;
-  left: 25px;
-  transform: rotate(-12deg);
+  font-size: 0.62rem;
+  transform: rotate(-7deg);
+}
+
+.stamp-charcoal {
+  padding: 0.55rem 0.95rem;
+  border-color: var(--charcoal-black);
+  color: var(--charcoal-black);
+  font-size: 0.68rem;
+  transform: rotate(-2deg);
 }
 
 /* =========================================================
@@ -550,24 +560,30 @@ body.grunge-body {
 }
 
 /* SCRIPT ACCENT TAGS (PLACED IN VISIBLE NON-COLLIDING SLOTS) */
+.headline-subtags-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 .script-overlay {
   display: inline-block;
-  margin-top: 1.5rem;
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
 }
 
 .script-secondary-overlay {
   display: inline-block;
-  margin-left: 1rem;
   transform: rotate(2deg);
 }
 
 .brush-script-tag {
   font-family: var(--font-script);
-  font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.25rem, 3vw, 2.2rem);
   background: var(--crimson-red);
   color: var(--paper-bg);
-  padding: 0.25rem 1.25rem;
+  padding: 0.35rem 1.25rem;
   border: 3px solid var(--charcoal-black);
   box-shadow: 4px 4px 0 var(--charcoal-black);
   display: inline-block;
@@ -576,30 +592,30 @@ body.grunge-body {
 .brush-script-tag.gold-brush {
   background: var(--muted-gold);
   color: var(--charcoal-black);
-  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.85rem);
 }
 
 /* CENTRAL GRAPHIC COLLAGE CONTAINER */
 .central-collage-box {
   background: #ffffff;
   border: 4px solid var(--charcoal-black);
-  padding: 3.5rem 2.5rem;
-  margin: 3.5rem 0;
+  padding: 2.75rem 2.25rem;
+  margin: 3rem 0;
   box-shadow: 10px 10px 0 var(--charcoal-black);
   position: relative;
-  transform: rotate(0.3deg);
+  transform: rotate(0.2deg);
 }
 
 .collage-badge {
   display: inline-block;
   background: var(--charcoal-black);
   color: var(--paper-bg);
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.95rem;
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  transform: rotate(-1deg);
+  transform: rotate(-0.5deg);
 }
 
 .collage-manifesto-text {
@@ -856,10 +872,57 @@ body.grunge-body {
 .poster-spec-chips {
   border-top: 2px dashed rgba(0, 0, 0, 0.2);
   padding-top: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+/* =========================================================
+   LIVE GITHUB STATS BADGES (PUNK METRIC PILLS)
+   ========================================================= */
+.poster-github-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 0.65rem;
+  background: rgba(26, 26, 26, 0.05);
+  border: 1.5px dashed var(--charcoal-black);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.poster-dark .poster-github-stats {
+  background: rgba(240, 234, 214, 0.08);
+  border-color: rgba(240, 234, 214, 0.4);
+  color: var(--paper-bg);
+}
+
+.gh-stat-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.poster-dark .gh-stat-tag {
+  background: var(--paper-bg);
+  color: var(--charcoal-black);
+}
+
+.gh-stat-tag.stat-stars {
+  background: var(--muted-gold);
+  color: var(--charcoal-black);
+}
+
+.gh-stat-tag.stat-tag {
+  background: var(--crimson-red);
+  color: var(--paper-bg);
 }
 
 .poster-action-group {
@@ -1254,15 +1317,9 @@ body.grunge-body {
    RESPONSIVE BREAKPOINTS
    ========================================================= */
 @media (max-width: 900px) {
-  .script-overlay {
+  .headline-subtags-row {
     margin-top: 1rem;
-    display: block;
-  }
-
-  .script-secondary-overlay {
-    margin-left: 0;
-    margin-top: 0.75rem;
-    display: block;
+    gap: 0.75rem;
   }
 
   .telegram-line {
@@ -1294,12 +1351,16 @@ body.grunge-body {
     display: block;
   }
 
+  .zine-masthead {
+    padding: 0.65rem 0;
+  }
+
   .headline-row {
-    font-size: clamp(2.8rem, 14vw, 4.5rem);
+    font-size: clamp(2.6rem, 13vw, 4.2rem);
   }
 
   .headline-row.row-two {
-    font-size: clamp(3.2rem, 16vw, 5.5rem);
+    font-size: clamp(3rem, 15vw, 5rem);
   }
 
   .works-posters-grid {
@@ -1307,10 +1368,29 @@ body.grunge-body {
   }
 
   .central-collage-box {
-    padding: 2.25rem 1.5rem;
+    padding: 2rem 1.25rem;
   }
 
-  .rubber-stamp {
-    display: none; /* Hide decorative floating stamps on small mobile screens to prevent text overlap */
+  .collage-stamps-bar {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .stamp-crimson {
+    width: 76px;
+    height: 76px;
+    font-size: 0.58rem;
+  }
+
+  .stamp-gold {
+    width: 68px;
+    height: 68px;
+    font-size: 0.54rem;
+  }
+
+  .stamp-charcoal {
+    font-size: 0.62rem;
+    padding: 0.4rem 0.75rem;
   }
 }
