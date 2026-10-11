@@ -33,9 +33,10 @@ The official portfolio website of **S. M. Mahmud Iqbal**, built with a **Grunge 
 1. **ShelfSense**: Arrhenius degradation trajectories & packaging barrier models ([Live](https://shelfsense-lemon.vercel.app))
 2. **FileBodlai**: Air-gapped 100% offline Android studio with zero network permissions ([Repo](https://github.com/SMMahmudIqbal/FileBodlai))
 3. **Fluid Tracker Pro**: 3D minimalist liquid-glass wellness ecosystem with canvas physics ([Repo](https://github.com/SMMahmudIqbal/fluid-tracker-pro))
-4. **BD Food Passport**: 64-district culinary cartography with interactive vector SVG ([Live](https://bd-food-passport.vercel.app))
-5. **Bahana**: Cultural linguistics and generative UI engine ([Live](https://bahana-app.vercel.app))
-6. **SnapFlow**: Swiss Brutalist media engine ([Repo](https://github.com/SMMahmudIqbal/snapflow-media-downloader))
+4. **DotWeather & Air**: Nothing OS 3.0 minimalist weather & environmental sensor monitor ([Repo](https://github.com/SMMahmudIqbal/DotWeather))
+5. **BD Food Passport**: 64-district culinary cartography with interactive vector SVG ([Live](https://bd-food-passport.vercel.app))
+6. **Bahana**: Cultural linguistics and generative UI engine ([Live](https://bahana-app.vercel.app))
+7. **SnapFlow**: Swiss Brutalist media engine ([Repo](https://github.com/SMMahmudIqbal/snapflow-media-downloader))
 
 ---
 
