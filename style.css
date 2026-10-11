@@ -650,7 +650,23 @@ body.grunge-body {
   color: var(--charcoal-black);
   letter-spacing: 0.5px;
   max-width: 950px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.opportunity-callout-strip {
+  display: inline-block;
+  background: var(--muted-gold);
+  color: var(--charcoal-black);
+  border: 2px dashed var(--charcoal-black);
+  padding: 0.6rem 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  transform: rotate(-0.5deg);
+  box-shadow: 4px 4px 0 var(--charcoal-black);
+  line-height: 1.4;
 }
 
 .collage-buttons-cluster {
@@ -715,6 +731,20 @@ body.grunge-body {
 .btn-gold:hover,
 .btn-gold:focus-visible {
   background: var(--crimson-red);
+  color: var(--paper-bg);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--charcoal-black);
+  outline: none;
+}
+
+.btn-paper {
+  background: var(--paper-bg);
+  color: var(--charcoal-black);
+}
+
+.btn-paper:hover,
+.btn-paper:focus-visible {
+  background: var(--charcoal-black);
   color: var(--paper-bg);
   transform: translate(-3px, -3px);
   box-shadow: 7px 7px 0 var(--charcoal-black);
