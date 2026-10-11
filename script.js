@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   soundEngine = initAnalogSoundEngine();
   initMobileDrawer();
   initSmoothScroll();
+  initProjectFilters();
   initTactileInteractions();
   initGitHubRepoStats();
 });
@@ -108,6 +109,37 @@ function initSmoothScroll() {
         // Update URL hash without jumping
         history.pushState(null, null, targetId);
       }
+    });
+  });
+}
+
+/* =========================================================
+   2.5. PROJECT CATEGORY FILTERS (PUNK ARCHIVE TABS)
+   ========================================================= */
+function initProjectFilters() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectPosters = document.querySelectorAll(".work-poster");
+  if (!filterButtons.length || !projectPosters.length) return;
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const selectedCategory = btn.getAttribute("data-filter");
+      filterButtons.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      if (soundEngine) soundEngine.playMechanicalClick();
+
+      projectPosters.forEach((poster) => {
+        const categories = (poster.getAttribute("data-category") || "").split(" ");
+        if (selectedCategory === "all" || categories.includes(selectedCategory)) {
+          poster.classList.remove("filter-hidden");
+        } else {
+          poster.classList.add("filter-hidden");
+        }
+      });
     });
   });
 }

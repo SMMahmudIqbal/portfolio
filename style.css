@@ -847,6 +847,71 @@ body.grunge-body {
 }
 
 /* =========================================================
+   PROJECT FILTER TABS (PUNK ZINE TACTILE SWITCHES)
+   ========================================================= */
+.works-filter-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 2.75rem;
+  padding: 1.15rem 1.35rem;
+  background: #ffffff;
+  border: 3.5px solid var(--charcoal-black);
+  box-shadow: 6px 6px 0 var(--charcoal-black);
+}
+
+.filter-prompt-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--crimson-red);
+  letter-spacing: 1px;
+}
+
+.filter-buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: var(--paper-bg);
+  color: var(--charcoal-black);
+  border: 2px solid var(--charcoal-black);
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 2px 2px 0 var(--charcoal-black);
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+  background: var(--charcoal-black);
+  color: var(--paper-bg);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--crimson-red);
+  outline: none;
+}
+
+.filter-btn.active {
+  background: var(--crimson-red);
+  color: var(--paper-bg);
+  border-color: var(--charcoal-black);
+  box-shadow: 3px 3px 0 var(--charcoal-black);
+  transform: translateY(-1px);
+}
+
+.work-poster.filter-hidden {
+  display: none !important;
+}
+
+/* =========================================================
    SELECTED WORKS COLLAGE POSTERS (STABLE HOVER)
    ========================================================= */
 .works-posters-grid {

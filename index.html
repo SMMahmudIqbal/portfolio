@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;900&family=Permanent+Marker&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Rock+Salt&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=20261011_6">
+  <link rel="stylesheet" href="style.css?v=20261011_7">
 </head>
 <body class="grunge-body">
 
@@ -280,10 +280,29 @@
           <span class="handwritten-subtitle">Fragmented &bull; Physical Media &bull; Code in Production</span>
         </div>
 
+        <!-- PROJECT FILTER TABS (PUNK-ZINE STYLE) -->
+        <div class="works-filter-bar jitter-element">
+          <span class="filter-prompt-label">FILTER // ARCHIVE:</span>
+          <div class="filter-buttons-group" role="tablist" aria-label="Filter Projects">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+              <span>[00: ALL // 06]</span>
+            </button>
+            <button class="filter-btn" data-filter="food" role="tab" aria-selected="false">
+              <span>[01: FOOD TECH // 02]</span>
+            </button>
+            <button class="filter-btn" data-filter="android" role="tab" aria-selected="false">
+              <span>[02: ANDROID &amp; SENSORS // 02]</span>
+            </button>
+            <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">
+              <span>[03: REACTIVE WEB // 03]</span>
+            </button>
+          </div>
+        </div>
+
         <div class="works-posters-grid">
 
           <!-- 01. ShelfSense -->
-          <article class="work-poster torn-card-edge">
+          <article class="work-poster torn-card-edge" data-category="food">
             <div class="poster-pin pin-red"></div>
             <div class="poster-banner banner-red">SYS.01 // FOOD QUALITY MODELER</div>
             <h3 class="poster-title">SHELFSENSE</h3>
@@ -311,7 +330,7 @@
           </article>
 
           <!-- 02. FileBodlai -->
-          <article class="work-poster torn-card-edge poster-dark">
+          <article class="work-poster torn-card-edge poster-dark" data-category="android">
             <div class="poster-pin pin-gold"></div>
             <div class="poster-banner banner-gold">SYS.02 // PRIVACY SOVEREIGNTY</div>
             <h3 class="poster-title text-paper">FILEBODLAI</h3>
@@ -336,7 +355,7 @@
           </article>
 
           <!-- 03. Fluid Tracker Pro -->
-          <article class="work-poster torn-card-edge">
+          <article class="work-poster torn-card-edge" data-category="android">
             <div class="poster-pin pin-red"></div>
             <div class="poster-banner banner-red">SYS.03 // SENSOR DYNAMICS</div>
             <h3 class="poster-title">FLUID TRACKER PRO</h3>
@@ -361,7 +380,7 @@
           </article>
 
           <!-- 04. Bangladesh Food Passport -->
-          <article class="work-poster torn-card-edge">
+          <article class="work-poster torn-card-edge" data-category="food web">
             <div class="poster-pin pin-red"></div>
             <div class="poster-banner banner-red">SYS.04 // CULTURAL CARTOGRAPHY</div>
             <h3 class="poster-title">BD FOOD PASSPORT</h3>
@@ -389,7 +408,7 @@
           </article>
 
           <!-- 05. Bahana -->
-          <article class="work-poster torn-card-edge poster-dark">
+          <article class="work-poster torn-card-edge poster-dark" data-category="web">
             <div class="poster-pin pin-gold"></div>
             <div class="poster-banner banner-gold">SYS.05 // LINGUISTIC GENERATION</div>
             <h3 class="poster-title text-paper">BAHANA</h3>
@@ -417,7 +436,7 @@
           </article>
 
           <!-- 06. SnapFlow -->
-          <article class="work-poster torn-card-edge">
+          <article class="work-poster torn-card-edge" data-category="web">
             <div class="poster-pin pin-red"></div>
             <div class="poster-banner banner-red">SYS.06 // MEDIA ENGINE</div>
             <h3 class="poster-title">SNAPFLOW</h3>
@@ -882,6 +901,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261011_6"></script>
+  <script src="script.js?v=20261011_7"></script>
 </body>
 </html>
