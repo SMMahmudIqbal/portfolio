@@ -1879,3 +1879,305 @@ body.grunge-body {
     padding: 0.4rem 0.75rem;
   }
 }
+
+/* ==========================================================================
+   THEME TOGGLE BUTTON & CONTROLS
+   Developed by S. M. Mahmud Iqbal
+   ========================================================================== */
+.theme-toggle-btn {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.38rem 0.75rem;
+  background-color: var(--charcoal-black);
+  color: var(--muted-gold);
+  border: 1px solid var(--muted-gold);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--muted-gold);
+  color: var(--charcoal-black);
+  box-shadow: 0 0 10px rgba(197, 169, 69, 0.4);
+}
+
+.theme-toggle-btn.is-dossier {
+  background-color: #000000;
+  color: #00ff88;
+  border-color: #00ff88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.25);
+}
+
+/* ==========================================================================
+   CYBER-DOSSIER / MUSE 2026 THEME OVERRIDES (BODY.THEME-DOSSIER)
+   Developed by S. M. Mahmud Iqbal
+   ========================================================================== */
+body.theme-dossier {
+  --paper-bg: #05070a;
+  --charcoal-black: #f0f4f8;
+  --crimson-red: #ff3366;
+  --crimson-dark: #cc1144;
+  --muted-gold: #00ff88;
+  --tape-color: rgba(10, 20, 30, 0.85);
+
+  background-color: #040608 !important;
+  color: #e2e8f0 !important;
+  background-image: 
+    radial-gradient(rgba(0, 255, 136, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
+  background-size: 20px 20px, 100% 40px !important;
+}
+
+/* Scanner Bar at top of hero */
+.dossier-scanner-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  margin-bottom: 2rem;
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: #00ff88;
+}
+
+.dossier-scanner-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dossier-scan-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.dossier-scanner-right {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.dossier-spec-badge {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.68rem;
+}
+
+/* Hero 2-column layout */
+.hero-main-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.hero-content-col {
+  flex: 1;
+}
+
+.hero-biometric-col {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+/* Biometric Terminal Card */
+.biometric-terminal-card {
+  background: rgba(10, 15, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease;
+}
+
+body.theme-dossier .biometric-terminal-card {
+  border-color: rgba(0, 255, 136, 0.3);
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.08);
+}
+
+.biometric-dot-matrix {
+  width: 140px;
+  height: 140px;
+  color: #00ff88;
+}
+
+.biometric-matrix-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.biometric-tagline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+}
+
+.matrix-code-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #f1f5f9;
+}
+
+.matrix-verified-stamp {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #ff3366;
+  font-weight: 600;
+}
+
+/* Dossier Sub-Headline */
+.dossier-subheadline-block {
+  margin-top: 1.5rem;
+  padding-left: 0.25rem;
+}
+
+.dossier-subheadline-text {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #00ff88;
+  margin-bottom: 0.75rem;
+}
+
+body:not(.theme-dossier) .dossier-subheadline-text {
+  color: var(--crimson-red);
+}
+
+.dossier-academic-lead {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body:not(.theme-dossier) .dossier-academic-lead {
+  color: var(--charcoal-black);
+}
+
+/* Dossier overrides for sections & cards */
+body.theme-dossier .zine-masthead {
+  background: rgba(5, 7, 10, 0.92) !important;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.2) !important;
+}
+
+body.theme-dossier .zine-brand-stamp {
+  background: #00ff88 !important;
+  color: #040608 !important;
+}
+
+body.theme-dossier .specs-pill {
+  background: rgba(0, 255, 136, 0.12) !important;
+  color: #00ff88 !important;
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+}
+
+body.theme-dossier .zine-nav-link {
+  color: #94a3b8 !important;
+}
+
+body.theme-dossier .zine-nav-link:hover {
+  color: #00ff88 !important;
+}
+
+body.theme-dossier .central-collage-box {
+  background: #0a0e17 !important;
+  border: 1px solid rgba(0, 255, 136, 0.25) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8) !important;
+}
+
+body.theme-dossier .collage-manifesto-text {
+  color: #cbd5e1 !important;
+}
+
+body.theme-dossier .work-poster {
+  background: #0a0e17 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.theme-dossier .work-poster:hover {
+  border-color: #00ff88 !important;
+  box-shadow: 0 8px 28px rgba(0, 255, 136, 0.12) !important;
+}
+
+body.theme-dossier .poster-title {
+  color: #f8fafc !important;
+}
+
+body.theme-dossier .poster-summary {
+  color: #94a3b8 !important;
+}
+
+body.theme-dossier .about-narrative-card,
+body.theme-dossier .bento-stat-card,
+body.theme-dossier .arsenal-board-container,
+body.theme-dossier .dossier-folder,
+body.theme-dossier .telegram-terminal-card {
+  background: #0a0e17 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e2e8f0 !important;
+}
+
+body.theme-dossier .narrative-lead,
+body.theme-dossier .narrative-body,
+body.theme-dossier .bento-desc {
+  color: #cbd5e1 !important;
+}
+
+body.theme-dossier .heavy-headline {
+  color: #f8fafc !important;
+}
+
+body.theme-dossier .zine-footer {
+  background: #030406 !important;
+  border-top: 1px solid rgba(0, 255, 136, 0.2) !important;
+}
+
+body.theme-dossier .footer-attribution-callout {
+  color: #00ff88 !important;
+}
+
+body.theme-dossier .footer-sub-text {
+  color: #94a3b8 !important;
+}
+
+body.theme-dossier .texture-layer.halftone-dots {
+  opacity: 0.12;
+}
+
+@media (max-width: 900px) {
+  .hero-main-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .hero-biometric-col {
+    width: 100%;
+  }
+  .dossier-scanner-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
+

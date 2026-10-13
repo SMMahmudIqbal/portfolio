@@ -21,6 +21,7 @@ let soundEngine = null;
 
 document.addEventListener("DOMContentLoaded", () => {
   soundEngine = initAnalogSoundEngine();
+  initThemeSwitcher();
   initMobileDrawer();
   initSmoothScroll();
   initProjectFilters();
@@ -467,5 +468,54 @@ function initAnalogSoundEngine() {
 
   return engine;
 }
+
+/* =========================================================
+   6. THEME SWITCHER: CYBER-DOSSIER / MUSE 2026 ENGINE
+   Developed by S. M. Mahmud Iqbal
+   ========================================================= */
+function initThemeSwitcher() {
+  const toggleBtns = document.querySelectorAll(".theme-toggle-btn");
+  
+  function applyTheme(isDossier) {
+    if (isDossier) {
+      document.body.classList.add("theme-dossier");
+      toggleBtns.forEach((btn) => {
+        btn.classList.add("is-dossier");
+        const txt = btn.querySelector(".theme-status-text");
+        if (txt) txt.textContent = "[MODE: DOSSIER 2026]";
+      });
+    } else {
+      document.body.classList.remove("theme-dossier");
+      toggleBtns.forEach((btn) => {
+        btn.classList.remove("is-dossier");
+        const txt = btn.querySelector(".theme-status-text");
+        if (txt) txt.textContent = "[MODE: GRUNGE ZINE]";
+      });
+    }
+  }
+
+  // Default to Dossier mode (matching Muse.ai), or restore user choice
+  let isDossier = true;
+  try {
+    const saved = localStorage.getItem("smmi_portfolio_theme");
+    if (saved !== null) {
+      isDossier = saved === "dossier";
+    }
+  } catch (_) {}
+
+  applyTheme(isDossier);
+
+  toggleBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      isDossier = !document.body.classList.contains("theme-dossier");
+      applyTheme(isDossier);
+      try {
+        localStorage.setItem("smmi_portfolio_theme", isDossier ? "dossier" : "grunge");
+      } catch (_) {}
+      if (soundEngine) soundEngine.playRelayLatch(isDossier);
+    });
+  });
+}
+
 
 

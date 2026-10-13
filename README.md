@@ -1,13 +1,23 @@
-# S. M. Mahmud Iqbal /// Grunge Collage Motion Graphics Portfolio
+# S. M. Mahmud Iqbal /// Cyber-Dossier & Grunge Collage Portfolio
 
-The official portfolio website of **S. M. Mahmud Iqbal**, built with a **Grunge Collage Motion Graphics** design system.
+The official portfolio website of **S. M. Mahmud Iqbal**, featuring the **Cyber-Dossier 2026** (inspired by Muse.ai) and **Grunge Collage Motion Graphics** dual-theme engine.
 
 **Developed by S. M. Mahmud Iqbal**  
 *Food Process Engineering & Modern Systems Architecture*  
 
 ---
 
-## ⚡ Design Style: Grunge Collage Motion Graphics
+## ⚡ Design Archetypes: Dual Identity Engine
+
+- **Cyber-Dossier 2026 (Default Mode)**:
+  - Inspired by the Meta AI / Muse shared creation (`muse.ai/s/portfolio-xhxa6d0xux0xdxzhj`).
+  - Dark Void Terminal (`#040608`), neon biometric green (`#00FF88`), radar grid overlays.
+  - Interactive SVG dot-matrix biometric avatar matching the Muse artifact abstraction.
+  - Live identity scanning bar: `IDENTITY SCAN / DOSSIER 2026`.
+- **Grunge Zine Mode**:
+  - Raw, chaotic energy & stop-motion physical media.
+  - Aged off-white paper (`#F0EAD6`), charcoal black (`#1A1A1A`), crimson tape stamps.
+  - Instant one-click toggle in the masthead navigation and mobile drawer.
 
 - **Core Concept**: Raw, Chaotic Energy & Stop-Motion Physical Media.
 - **Palette**:

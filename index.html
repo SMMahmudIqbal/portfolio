@@ -11,17 +11,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="S. M. Mahmud Iqbal">
-  <meta name="description" content="Grunge Collage Motion Graphics Portfolio of S. M. Mahmud Iqbal. Food Process Engineering & Air-Gapped Systems Architecture. Developed by S. M. Mahmud Iqbal.">
-  <meta property="og:title" content="S. M. Mahmud Iqbal &bull; RAW COLLAGE MOTION &bull; 2026">
-  <meta property="og:description" content="Raw, Chaotic Energy Punk Zine. Developed by S. M. Mahmud Iqbal.">
-  <title>S. M. Mahmud Iqbal &bull; RAW COLLAGE MOTION &bull; 2026</title>
+  <meta name="description" content="Portfolio of S. M. Mahmud Iqbal. Systems Architecture, Biological Kinetics, and Vibe Coding. Developed by S. M. Mahmud Iqbal.">
+  <meta property="og:title" content="S. M. Mahmud Iqbal &bull; CYBER-DOSSIER &bull; 2026">
+  <meta property="og:description" content="Systems Architecture, Biological Kinetics, and Vibe Coding. Developed by S. M. Mahmud Iqbal.">
+  <meta property="og:image" content="dossier-hero-preview.jpg">
+  <title>S. M. Mahmud Iqbal &bull; DOSSIER 2026</title>
 
   <!-- Google Fonts: Oswald / Impact, Permanent Marker, Roboto Mono, Rock Salt -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;900&family=Permanent+Marker&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Rock+Salt&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=20261011_7">
+  <link rel="stylesheet" href="style.css?v=20261013_1">
 </head>
 <body class="grunge-body">
 
@@ -65,6 +66,9 @@
       </nav>
 
       <div class="masthead-controls">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Cyber-Dossier Theme" title="Toggle between Muse Cyber-Dossier & Grunge Zine">
+          <span class="theme-status-text">[MODE: DOSSIER 2026]</span>
+        </button>
         <button id="sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle Mechanical Sound Effects" title="Mechanical & Analog Sound FX (Web Audio API)">
           <span class="sound-status-text">[AUDIO: OFF]</span>
         </button>
@@ -82,6 +86,9 @@
       <button id="zine-drawer-close" class="drawer-close">&times;</button>
     </div>
     <div class="drawer-audio-toggle-row">
+      <button id="drawer-theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Cyber-Dossier Theme">
+        <span class="theme-status-text">[MODE: DOSSIER 2026]</span>
+      </button>
       <button id="drawer-sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle Mechanical Sound Effects">
         <span class="sound-status-text">[AUDIO: OFF]</span>
       </button>
@@ -101,28 +108,108 @@
   </div>
 
   <main>
-    <!-- HERO SPREAD: COLLAGE OF MASSIVE DISTRESSED TYPE & TORN ELEMENTS -->
+    <!-- HERO SPREAD: COLLAGE OF MASSIVE DISTRESSED TYPE & TORN ELEMENTS / CYBER DOSSIER -->
     <section id="hero" class="hero-spread">
       <div class="spread-container">
 
-        <!-- COMPONENT 2: THE "DISTRESSED TEXT BLOCK" -->
-        <div class="distressed-headline-block">
-          <div class="headline-row row-one">
-            <span class="block-char">S</span>
-            <span class="block-char">.</span>
-            <span class="block-char">M</span>
-            <span class="block-char">.</span>
-            <span class="block-char space">&nbsp;</span>
-            <span class="block-char">M</span>
-            <span class="block-char">A</span>
-            <span class="block-char">H</span>
-            <span class="block-char">M</span>
-            <span class="block-char">U</span>
-            <span class="block-char">D</span>
+        <!-- CYBER-DOSSIER SCANNER OVERLAY BAR (Active in Dossier Mode) -->
+        <div class="dossier-scanner-bar" aria-hidden="true">
+          <div class="dossier-scanner-left">
+            <span class="dossier-scan-indicator"></span>
+            <span class="dossier-scan-label">IDENTITY SCAN / DOSSIER 2026</span>
+          </div>
+          <div class="dossier-scanner-right">
+            <span class="dossier-spec-badge">SYS: META-MUSE // SECURE DEPLOYMENT</span>
+            <span class="dossier-spec-badge">AUTH: SMMI_AUTHENTICATED</span>
+          </div>
+        </div>
+
+        <div class="hero-main-layout">
+          <div class="hero-content-col">
+            <!-- COMPONENT 2: THE "DISTRESSED TEXT BLOCK" -->
+            <div class="distressed-headline-block">
+              <div class="headline-row row-one">
+                <span class="block-char">S</span>
+                <span class="block-char">.</span>
+                <span class="block-char">M</span>
+                <span class="block-char">.</span>
+                <span class="block-char space">&nbsp;</span>
+                <span class="block-char">M</span>
+                <span class="block-char">A</span>
+                <span class="block-char">H</span>
+                <span class="block-char">M</span>
+                <span class="block-char">U</span>
+                <span class="block-char">D</span>
+              </div>
+
+              <div class="headline-row row-two">
+                <span class="crimson-tape-word">IQBAL</span>
+              </div>
+            </div>
+
+            <!-- DOSSIER SUB-HEADLINE -->
+            <div class="dossier-subheadline-block">
+              <h2 class="dossier-subheadline-text">SYSTEMS ARCHITECTURE / BIOLOGICAL KINETICS / VIBE CODING</h2>
+              <p class="dossier-academic-lead">NUTRITION &amp; FOOD ENGINEERING (DIU) &bull; BUILDING DETERMINISTIC SYSTEMS THAT BRIDGE FOOD SCIENCE WITH SOFTWARE</p>
+            </div>
           </div>
 
-          <div class="headline-row row-two">
-            <span class="crimson-tape-word">IQBAL</span>
+          <!-- CYBER-DOSSIER RIGHT COLUMN: BIOMETRIC ABSTRACTION AVATAR -->
+          <div class="hero-biometric-col" aria-label="Biometric Abstraction Dot Matrix">
+            <div class="biometric-terminal-card">
+              <div class="biometric-dot-matrix">
+                <!-- Dot matrix biometric fingerprint SVG abstraction matching Muse -->
+                <svg viewBox="0 0 160 160" class="biometric-matrix-svg" aria-hidden="true">
+                  <defs>
+                    <pattern id="dot-grid" width="8" height="8" patternUnits="userSpaceOnUse">
+                      <circle cx="4" cy="4" r="1.1" fill="currentColor" opacity="0.18"/>
+                    </pattern>
+                  </defs>
+                  <rect width="160" height="160" fill="url(#dot-grid)"/>
+                  <!-- Core biometric fingerprint & face abstraction contours -->
+                  <g class="matrix-contours" fill="currentColor">
+                    <!-- Concentric biometric dot rings -->
+                    <circle cx="80" cy="80" r="6" class="dot-p"/>
+                    <circle cx="80" cy="65" r="2.2" class="dot-p"/>
+                    <circle cx="80" cy="95" r="2.2" class="dot-p"/>
+                    <circle cx="65" cy="80" r="2.2" class="dot-p"/>
+                    <circle cx="95" cy="80" r="2.2" class="dot-p"/>
+                    <!-- Outer biometric contour rings -->
+                    <circle cx="80" cy="50" r="2.2" class="dot-p"/>
+                    <circle cx="80" cy="110" r="2.2" class="dot-p"/>
+                    <circle cx="50" cy="80" r="2.2" class="dot-p"/>
+                    <circle cx="110" cy="80" r="2.2" class="dot-p"/>
+                    <!-- Arcs formed by dots -->
+                    <circle cx="60" cy="60" r="2.2" class="dot-p"/>
+                    <circle cx="100" cy="60" r="2.2" class="dot-p"/>
+                    <circle cx="60" cy="100" r="2.2" class="dot-p"/>
+                    <circle cx="100" cy="100" r="2.2" class="dot-p"/>
+                    <!-- Ring 3 -->
+                    <circle cx="42" cy="70" r="2.2" class="dot-p"/>
+                    <circle cx="42" cy="90" r="2.2" class="dot-p"/>
+                    <circle cx="118" cy="70" r="2.2" class="dot-p"/>
+                    <circle cx="118" cy="90" r="2.2" class="dot-p"/>
+                    <circle cx="70" cy="42" r="2.2" class="dot-p"/>
+                    <circle cx="90" cy="42" r="2.2" class="dot-p"/>
+                    <circle cx="70" cy="118" r="2.2" class="dot-p"/>
+                    <circle cx="90" cy="118" r="2.2" class="dot-p"/>
+                    <!-- Outer Shield -->
+                    <circle cx="34" cy="80" r="2.2" class="dot-p"/>
+                    <circle cx="126" cy="80" r="2.2" class="dot-p"/>
+                    <circle cx="80" cy="34" r="2.2" class="dot-p"/>
+                    <circle cx="80" cy="126" r="2.2" class="dot-p"/>
+                    <!-- Density clusters matching Muse abstraction -->
+                    <rect x="52" y="74" width="16" height="3" rx="1.5" opacity="0.85"/>
+                    <rect x="92" y="74" width="16" height="3" rx="1.5" opacity="0.85"/>
+                    <rect x="68" y="92" width="24" height="3.5" rx="1.7" opacity="0.85"/>
+                  </g>
+                </svg>
+              </div>
+              <div class="biometric-tagline">
+                <span class="matrix-code-badge">S M M I / 2 0 2 6</span>
+                <span class="matrix-verified-stamp">BIOMETRIC ABSTRACTION // VERIFIED</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -949,6 +1036,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261011_7"></script>
+  <script src="script.js?v=20261013_1"></script>
 </body>
 </html>
