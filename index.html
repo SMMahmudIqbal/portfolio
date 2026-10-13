@@ -95,12 +95,14 @@
     .projects{display:block}
     .project{position:relative;display:grid;grid-template-columns:92px minmax(0,1fr);column-gap:26px;min-height:0;padding:30px var(--pad);border:0;border-bottom:1px solid var(--line);background:var(--bg);overflow:hidden}
     .project:last-child{border-bottom:0}.project.hidden{display:none}
-    .project .num{grid-column:1;grid-row:1/6;position:static;font:700 clamp(48px,6vw,76px)/.85 "Doto","DotGothic16",sans-serif;color:transparent;-webkit-text-stroke:1px var(--fg);opacity:.25}
-    .project .eyebrow,.project h3,.project .sub,.project .desc,.project .tags,.project .project-foot{grid-column:2}
+    .project .num{grid-column:1;grid-row:1/8;position:static;font:700 clamp(48px,6vw,76px)/.85 "Doto","DotGothic16",sans-serif;color:transparent;-webkit-text-stroke:1px var(--fg);opacity:.25}
+    .project .eyebrow,.project h3,.project .sub,.project .desc,.project .impact,.project .tags,.project .project-foot{grid-column:2}
     .project .eyebrow{margin:0 0 11px;font-size:9px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}
     .project h3{max-width:none;margin:0 0 5px;font-size:clamp(27px,3.8vw,45px);line-height:1}
     .project .sub{margin:0 0 18px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-    .project .desc{max-width:800px;margin:0 0 18px;font-size:12px;line-height:1.7}
+    .project .desc{max-width:800px;margin:0 0 14px;font-size:12px;line-height:1.7}
+    .project .impact{max-width:800px;margin:0 0 18px;font-size:11px;line-height:1.65;color:var(--fg)}
+    .project .impact b{margin-right:8px;font-size:9px;letter-spacing:.1em;color:var(--accent)}
     .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:0}.tag{padding:4px 6px;border:1px solid var(--line);font-size:8px;letter-spacing:.05em;text-transform:uppercase}
     .project-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;padding-top:12px;border-top:1px dashed var(--line);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
     .project-foot a{color:var(--fg);text-decoration:underline;text-underline-offset:4px}.project:hover h3{color:var(--accent)}
@@ -123,6 +125,15 @@
     .dispatch-links{display:grid}.dispatch-links a{display:flex;justify-content:space-between;padding:16px 20px;border-top:1px solid var(--line);font-size:8px;letter-spacing:.08em;text-transform:uppercase}.dispatch-links a:hover{background:var(--fg);color:var(--bg)}
     footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:16px var(--pad);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
     .cursor:after{content:"_";color:var(--accent);animation:blink 1s steps(1) infinite}
+    body.booting{overflow:hidden}
+    .boot{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--bg);transition:opacity .35s ease}
+    .boot.done{opacity:0;pointer-events:none}
+    .boot-inner{width:min(560px,100%)}
+    .boot-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+    .boot-head:before{content:"";width:30px;height:3px;background:var(--accent)}
+    .boot-lines{min-height:150px;margin:0;white-space:pre-wrap;font-family:"Space Mono",monospace;font-size:clamp(11px,2.6vw,13px);line-height:2.1;color:var(--fg)}
+    .boot-lines:after{content:"_";color:var(--accent);animation:blink 1s steps(1) infinite}
+    .boot-skip{margin-top:20px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
     @keyframes blink{50%{opacity:0}}
     @keyframes scan{0%{top:-2%}100%{top:102%}}
     @keyframes flickerIn{0%{opacity:0;filter:blur(5px)}28%{opacity:.35}42%{opacity:0}70%{opacity:1;filter:blur(0)}100%{opacity:1}}
@@ -135,7 +146,7 @@
       .nav a{flex:1 1 33.333%;padding:10px 6px;text-align:center;border-bottom:1px solid var(--line)}
       .section-head{grid-template-columns:40px 1fr;align-items:start;padding-top:27px}.section-head p{grid-column:1/-1;text-align:left}.index{font-size:24px}
       .readouts{grid-template-columns:1fr}.readout{border-right:0!important;border-bottom:1px solid var(--line)!important}.readout:last-child{border-bottom:0!important}
-      .project{grid-template-columns:1fr;padding-block:25px}.project .num{grid-column:1;grid-row:auto;margin-bottom:18px;font-size:46px}.project .eyebrow,.project h3,.project .sub,.project .desc,.project .tags,.project .project-foot{grid-column:1}.project-foot{align-items:flex-start;flex-direction:column}
+      .project{grid-template-columns:1fr;padding-block:25px}.project .num{grid-column:1;grid-row:auto;margin-bottom:18px;font-size:46px}.project .eyebrow,.project h3,.project .sub,.project .desc,.project .impact,.project .tags,.project .project-foot{grid-column:1}.project-foot{align-items:flex-start;flex-direction:column}
       .skills-grid{grid-template-columns:1fr}.skill{border-right:0!important;border-bottom:1px solid var(--line)!important}.skill:last-child{border-bottom:0!important}
       .dossiers{grid-template-columns:1fr}.file,.file:last-child{grid-column:1;border-right:0;border-bottom:1px solid var(--line)}.file:last-child{border-bottom:0}.file ul{columns:1}
       .clock{display:none}.hero-actions .btn{width:100%}.dispatch-main{min-height:430px}
@@ -144,7 +155,14 @@
 
   </style>
 </head>
-<body>
+<body class="booting">
+  <div class="boot" id="boot" aria-hidden="true">
+    <div class="boot-inner">
+      <div class="boot-head">DEDSEC // Signal boot</div>
+      <pre class="boot-lines" id="bootLines"></pre>
+      <div class="boot-skip">Click anywhere to skip</div>
+    </div>
+  </div>
   <div class="frame">
     <div class="system-bar" aria-label="System status">
       <span class="rec"><i aria-hidden="true"></i>operator online</span>
@@ -228,14 +246,14 @@
           <button class="filter" data-filter="web" aria-pressed="false">Web systems</button>
         </div>
         <div class="projects">
-          <article class="project" data-tags="ai web"><span class="num">01</span><div class="eyebrow">Status: 60 FPS / online</div><h3>NeuroFlow</h3><p class="sub">3D AI universe</p><p class="desc">A high-dimensional latent-space and neural-graph visualizer for text embeddings and computer vision. It combines FastAPI with t-SNE, PCA, and UMAP reduction, Three.js instanced shaders, and spatial Web Audio.</p><div class="tags"><span class="tag">FastAPI</span><span class="tag">Three.js / R3F</span><span class="tag">t-SNE / UMAP</span><span class="tag">Color tensors</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="ai web"><span class="num">02</span><div class="eyebrow">Status: online</div><h3>ShelfSense</h3><p class="sub">Arrhenius kinetics</p><p class="desc">A predictive shelf-life engine for food exporters, combining Arrhenius degradation, WVTR/OTR packaging-barrier models, scenario comparison, and automated export-compliance certification.</p><div class="tags"><span class="tag">Arrhenius Q10</span><span class="tag">ASLT testing</span><span class="tag">Neo-brutalist</span><span class="tag">HTML / JS</span></div><div class="project-foot"><span>branch: master</span><a href="https://github.com/SMMahmudIqbal/shelfsense" target="_blank" rel="noopener noreferrer">Inspect source</a></div></article>
-          <article class="project" data-tags="mobile"><span class="num">03</span><div class="eyebrow">Rel: v1.0.0 / air-gapped</div><h3>FileBodlai</h3><p class="sub">100% offline Android</p><p class="desc">A private Android file-processing studio with no network permission. Built in Kotlin 2.0 and Jetpack Compose with native Scoped Storage and on-device PDF compression.</p><div class="tags"><span class="tag">Kotlin 2.0</span><span class="tag">Jetpack Compose</span><span class="tag">Zero network perms</span></div><div class="project-foot"><span>privacy: 100%</span><a href="https://github.com/SMMahmudIqbal/FileBodlai" target="_blank" rel="noopener noreferrer">Inspect source</a></div></article>
-          <article class="project" data-tags="mobile"><span class="num">04</span><div class="eyebrow">Status: physics kinetics</div><h3>Fluid Tracker Pro</h3><p class="sub">Physics canvas engine</p><p class="desc">A minimalist liquid-glass wellness ecosystem for Android, powered by dual-sine-wave canvas physics, accelerometer tilt tracking, and interactive home-screen widgets.</p><div class="tags"><span class="tag">SensorManager</span><span class="tag">Glance widgets</span><span class="tag">Canvas physics</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="mobile"><span class="num">05</span><div class="eyebrow">Rel: v1.8.0 / glyph + lunar</div><h3>DotWeather &amp; Air</h3><p class="sub">Nothing OS 3.0 edition</p><p class="desc">An Android weather and environmental-monitoring system with Glyph Atmosphere Pulse, a 14-hour temperature curve, Lunar Ephemeris tracking, WHO health directives, three widgets, and offline caching.</p><div class="tags"><span class="tag">Kotlin 2.2</span><span class="tag">Jetpack Compose</span><span class="tag">Glyph pulse</span><span class="tag">Lunar ephemeris</span><span class="tag">3× widgets</span></div><div class="project-foot"><span>telemetry: environmental</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="web"><span class="num">06</span><div class="eyebrow">Status: 64 districts mapped</div><h3>BD Food Passport</h3><p class="sub">Culinary vector cartography</p><p class="desc">An interactive food map spanning all 64 districts of Bangladesh, with high-performance client-side SVG traversal, collectible passport stamps, and dynamic social export cards.</p><div class="tags"><span class="tag">Vector SVG</span><span class="tag">Canvas API</span><span class="tag">JavaScript engine</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="web ai"><span class="num">07</span><div class="eyebrow">Status: React 19</div><h3>Bahana</h3><p class="sub">Bangladeshi excuse engine</p><p class="desc">A contextual cultural-language generator with paired Bangla and Banglish typography, tactile keyboard triggers, and a renderer for shareable social-story cards.</p><div class="tags"><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="web"><span class="num">08</span><div class="eyebrow">Status: Swiss brutalist</div><h3>SnapFlow</h3><p class="sub">Multi-platform media pipeline</p><p class="desc">A high-contrast Swiss Brutalist media-downloader interface with robust client-side routing and streamlined video-parsing pipelines across platforms.</p><div class="tags"><span class="tag">Swiss brutalism</span><span class="tag">CSS architecture</span><span class="tag">JavaScript</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="ai web"><span class="num">01</span><div class="eyebrow">Status: 60 FPS / online</div><h3>NeuroFlow</h3><p class="sub">3D AI universe</p><p class="desc">A high-dimensional latent-space and neural-graph visualizer for text embeddings and computer vision. It combines FastAPI with t-SNE, PCA, and UMAP reduction, Three.js instanced shaders, and spatial Web Audio.</p><p class="impact"><b>IMPACT //</b>Neural graphs rendered live at 60 FPS — embeddings explored in real time, not screenshots.</p><div class="tags"><span class="tag">FastAPI</span><span class="tag">Three.js / R3F</span><span class="tag">t-SNE / UMAP</span><span class="tag">Color tensors</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="ai web"><span class="num">02</span><div class="eyebrow">Status: online</div><h3>ShelfSense</h3><p class="sub">Arrhenius kinetics</p><p class="desc">A predictive shelf-life engine for food exporters, combining Arrhenius degradation, WVTR/OTR packaging-barrier models, scenario comparison, and automated export-compliance certification.</p><p class="impact"><b>IMPACT //</b>Shelf life predicted from Arrhenius kinetics — export compliance certified before a product ships.</p><div class="tags"><span class="tag">Arrhenius Q10</span><span class="tag">ASLT testing</span><span class="tag">Neo-brutalist</span><span class="tag">HTML / JS</span></div><div class="project-foot"><span>branch: master</span><a href="https://github.com/SMMahmudIqbal/shelfsense" target="_blank" rel="noopener noreferrer">Inspect source</a></div></article>
+          <article class="project" data-tags="mobile"><span class="num">03</span><div class="eyebrow">Rel: v1.0.0 / air-gapped</div><h3>FileBodlai</h3><p class="sub">100% offline Android</p><p class="desc">A private Android file-processing studio with no network permission. Built in Kotlin 2.0 and Jetpack Compose with native Scoped Storage and on-device PDF compression.</p><p class="impact"><b>IMPACT //</b>Zero network permissions — every file processed on-device, nothing ever leaves the phone.</p><div class="tags"><span class="tag">Kotlin 2.0</span><span class="tag">Jetpack Compose</span><span class="tag">Zero network perms</span></div><div class="project-foot"><span>privacy: 100%</span><a href="https://github.com/SMMahmudIqbal/FileBodlai" target="_blank" rel="noopener noreferrer">Inspect source</a></div></article>
+          <article class="project" data-tags="mobile"><span class="num">04</span><div class="eyebrow">Status: physics kinetics</div><h3>Fluid Tracker Pro</h3><p class="sub">Physics canvas engine</p><p class="desc">A minimalist liquid-glass wellness ecosystem for Android, powered by dual-sine-wave canvas physics, accelerometer tilt tracking, and interactive home-screen widgets.</p><p class="impact"><b>IMPACT //</b>Real-time canvas physics — hydration tracking that responds to every tilt of the device.</p><div class="tags"><span class="tag">SensorManager</span><span class="tag">Glance widgets</span><span class="tag">Canvas physics</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="mobile"><span class="num">05</span><div class="eyebrow">Rel: v1.8.0 / glyph + lunar</div><h3>DotWeather &amp; Air</h3><p class="sub">Nothing OS 3.0 edition</p><p class="desc">An Android weather and environmental-monitoring system with Glyph Atmosphere Pulse, a 14-hour temperature curve, Lunar Ephemeris tracking, WHO health directives, three widgets, and offline caching.</p><p class="impact"><b>IMPACT //</b>Weather, air quality, and WHO health directives in one glance — 14-hour curve, three widgets, fully cached offline.</p><div class="tags"><span class="tag">Kotlin 2.2</span><span class="tag">Jetpack Compose</span><span class="tag">Glyph pulse</span><span class="tag">Lunar ephemeris</span><span class="tag">3× widgets</span></div><div class="project-foot"><span>telemetry: environmental</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="web"><span class="num">06</span><div class="eyebrow">Status: 64 districts mapped</div><h3>BD Food Passport</h3><p class="sub">Culinary vector cartography</p><p class="desc">An interactive food map spanning all 64 districts of Bangladesh, with high-performance client-side SVG traversal, collectible passport stamps, and dynamic social export cards.</p><p class="impact"><b>IMPACT //</b>All 64 districts of Bangladesh mapped in a single client-side engine — no server, instant traversal.</p><div class="tags"><span class="tag">Vector SVG</span><span class="tag">Canvas API</span><span class="tag">JavaScript engine</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="web ai"><span class="num">07</span><div class="eyebrow">Status: React 19</div><h3>Bahana</h3><p class="sub">Bangladeshi excuse engine</p><p class="desc">A contextual cultural-language generator with paired Bangla and Banglish typography, tactile keyboard triggers, and a renderer for shareable social-story cards.</p><p class="impact"><b>IMPACT //</b>Context-aware excuses rendered as shareable story cards — Bangla and Banglish side by side.</p><div class="tags"><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="web"><span class="num">08</span><div class="eyebrow">Status: Swiss brutalist</div><h3>SnapFlow</h3><p class="sub">Multi-platform media pipeline</p><p class="desc">A high-contrast Swiss Brutalist media-downloader interface with robust client-side routing and streamlined video-parsing pipelines across platforms.</p><p class="impact"><b>IMPACT //</b>Multi-platform media parsing unified in one pipeline — downloads without the clutter.</p><div class="tags"><span class="tag">Swiss brutalism</span><span class="tag">CSS architecture</span><span class="tag">JavaScript</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
         </div>
       </section>
 
@@ -362,6 +380,78 @@
             bf.textContent=bfFrame(s,bob);
           },90);
         }
+      }
+
+      var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var boot=document.getElementById('boot');
+      if(boot){
+        var bootLines=document.getElementById('bootLines');
+        var bootDone=false;
+        function endBoot(){
+          if(bootDone){return;}
+          bootDone=true;
+          boot.classList.add('done');
+          document.body.classList.remove('booting');
+          window.removeEventListener('keydown',endBoot);
+          setTimeout(function(){if(boot.parentNode){boot.parentNode.removeChild(boot);}},420);
+        }
+        boot.addEventListener('click',endBoot);
+        window.addEventListener('keydown',endBoot);
+        if(reducedMotion){
+          endBoot();
+        }else{
+          var bootText=[
+            '> ESTABLISHING UPLINK ............ OK',
+            '> OPERATOR FILE: S. M. MAHMUD IQBAL',
+            '> DECRYPTING DOSSIER ............. OK',
+            '> LOADING 08 WORK FILES .......... OK',
+            '> ACCESS GRANTED'
+          ];
+          var bootIdx=0;
+          var bootTimer=setInterval(function(){
+            if(bootDone){clearInterval(bootTimer);return;}
+            if(bootIdx<bootText.length){
+              bootLines.textContent+=(bootIdx?'\n':'')+bootText[bootIdx];
+              bootIdx++;
+            }else{
+              clearInterval(bootTimer);
+              setTimeout(endBoot,340);
+            }
+          },150);
+        }
+      }
+
+      if(!reducedMotion){
+        var glyphs='·•:;+*#%@/\\<>[]{}=';
+        document.querySelectorAll('.project h3').forEach(function(h){
+          var original=h.textContent;
+          h.setAttribute('aria-label',original);
+          var timer=null;
+          function decrypt(){
+            if(timer){return;}
+            var frame=0;
+            var total=original.length+8;
+            timer=setInterval(function(){
+              frame++;
+              var reveal=Math.floor((frame/total)*original.length*1.7);
+              var out='';
+              for(var i=0;i<original.length;i++){
+                var c=original.charAt(i);
+                if(c===' '||i<reveal){out+=c;}
+                else{out+=glyphs.charAt(Math.floor(Math.random()*glyphs.length));}
+              }
+              h.textContent=out;
+              if(frame>=total){
+                h.textContent=original;
+                clearInterval(timer);
+                timer=null;
+              }
+            },34);
+          }
+          h.addEventListener('mouseenter',decrypt);
+          h.addEventListener('click',decrypt);
+        });
       }
 
       var filters=document.querySelectorAll('.filter');
