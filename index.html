@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
-<!-- Developed by S. M. Mahmud Iqbal -->
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="author" content="S. M. Mahmud Iqbal" />
   <meta name="color-scheme" content="light dark" />
+  <meta name="author" content="S. M. Mahmud Iqbal" />
   <link rel="icon" href="data:," />
   <title>S. M. Mahmud Iqbal — Operator Dossier</title>
-  <meta name="description" content="S. M. Mahmud Iqbal — food engineering, sovereign software, applied AI, and systems architecture. Developed by S. M. Mahmud Iqbal." />
+  <meta name="description" content="S. M. Mahmud Iqbal — food engineering, sovereign software, applied AI, and systems architecture." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400;700&family=DotGothic16&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -66,6 +65,7 @@
     .id-scan:before{content:"DEDSEC//SIGNAL";position:absolute;left:14px;top:14px;font-size:8px;letter-spacing:.14em;color:var(--bg)}
     .id-scan:after{content:"";position:absolute;left:0;right:0;height:3px;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:scan 5s linear infinite}
     .ascii{margin:0;white-space:pre;text-align:left;font-family:"Space Mono",monospace;font-size:clamp(8px,.72vw,11px);line-height:1.05;letter-spacing:0;color:var(--bg);filter:contrast(1.3)}
+    #butterfly{font-size:clamp(10px,1.05vw,15px)}
     .scan-label{position:absolute;left:14px;bottom:13px;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--bg);padding:5px 7px}
     .telemetry{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
     .telemetry div{padding:17px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -170,17 +170,18 @@
         </div>
         <aside class="hero-side" aria-label="Operator telemetry">
           <div class="id-scan">
-<pre class="ascii" aria-label="Abstract hacker mask made from ASCII characters">       /////////////
-    ////           &#92;&#92;&#92;&#92;
-  ///    [X]   [X]    &#92;&#92;&#92;
- //         /&#92;         &#92;&#92;
-||        //  &#92;&#92;        ||
-||      &lt;  NOISE  &gt;      ||
- &#92;&#92;       &#92;____/       //
-   &#92;&#92;&#92;      ####      ////
-      &#92;&#92;&#92;&#92;///////
-       S I G N A L_0 8</pre>
-            <span class="scan-label">mask signal // untraceable</span>
+<pre class="ascii" id="butterfly" aria-label="Animated ASCII butterfly flapping its wings">             \  O  /
+              \/|\/
+       .--.   /###\   .--.
+     .'    '-/#####\-'    '.
+    /  o        #        o  \
+   |      *     #     *      |
+    \  o        #        o  /
+     '.    .--#####--.    .'
+       '--'   \###/   '--'
+               ###
+               ###</pre>
+            <span class="scan-label">butterfly signal // in flight</span>
           </div>
           <div class="telemetry">
             <div><span class="micro">builds</span><b>08</b></div>
@@ -227,14 +228,14 @@
           <button class="filter" data-filter="web" aria-pressed="false">Web systems</button>
         </div>
         <div class="projects">
-          <article class="project" data-tags="ai web"><span class="num">01</span><div class="eyebrow">Status: 60 FPS / online</div><h3>NeuroFlow</h3><p class="sub">3D AI universe</p><p class="desc">A high-dimensional latent-space and neural-graph visualizer for text embeddings and computer vision. It combines FastAPI with t-SNE, PCA, and UMAP reduction, Three.js instanced shaders, and spatial Web Audio.</p><div class="tags"><span class="tag">FastAPI</span><span class="tag">Three.js / R3F</span><span class="tag">t-SNE / UMAP</span><span class="tag">Color tensors</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal/neuroflow" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="ai web"><span class="num">01</span><div class="eyebrow">Status: 60 FPS / online</div><h3>NeuroFlow</h3><p class="sub">3D AI universe</p><p class="desc">A high-dimensional latent-space and neural-graph visualizer for text embeddings and computer vision. It combines FastAPI with t-SNE, PCA, and UMAP reduction, Three.js instanced shaders, and spatial Web Audio.</p><div class="tags"><span class="tag">FastAPI</span><span class="tag">Three.js / R3F</span><span class="tag">t-SNE / UMAP</span><span class="tag">Color tensors</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
           <article class="project" data-tags="ai web"><span class="num">02</span><div class="eyebrow">Status: online</div><h3>ShelfSense</h3><p class="sub">Arrhenius kinetics</p><p class="desc">A predictive shelf-life engine for food exporters, combining Arrhenius degradation, WVTR/OTR packaging-barrier models, scenario comparison, and automated export-compliance certification.</p><div class="tags"><span class="tag">Arrhenius Q10</span><span class="tag">ASLT testing</span><span class="tag">Neo-brutalist</span><span class="tag">HTML / JS</span></div><div class="project-foot"><span>branch: master</span><a href="https://github.com/SMMahmudIqbal/shelfsense" target="_blank" rel="noopener noreferrer">Inspect source</a></div></article>
           <article class="project" data-tags="mobile"><span class="num">03</span><div class="eyebrow">Rel: v1.0.0 / air-gapped</div><h3>FileBodlai</h3><p class="sub">100% offline Android</p><p class="desc">A private Android file-processing studio with no network permission. Built in Kotlin 2.0 and Jetpack Compose with native Scoped Storage and on-device PDF compression.</p><div class="tags"><span class="tag">Kotlin 2.0</span><span class="tag">Jetpack Compose</span><span class="tag">Zero network perms</span></div><div class="project-foot"><span>privacy: 100%</span><a href="https://github.com/SMMahmudIqbal/FileBodlai" target="_blank" rel="noopener noreferrer">Inspect source</a></div></article>
-          <article class="project" data-tags="mobile"><span class="num">04</span><div class="eyebrow">Status: physics kinetics</div><h3>Fluid Tracker Pro</h3><p class="sub">Physics canvas engine</p><p class="desc">A minimalist liquid-glass wellness ecosystem for Android, powered by dual-sine-wave canvas physics, accelerometer tilt tracking, and interactive home-screen widgets.</p><div class="tags"><span class="tag">SensorManager</span><span class="tag">Glance widgets</span><span class="tag">Canvas physics</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal/fluid-tracker-pro" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="mobile"><span class="num">05</span><div class="eyebrow">Rel: v1.8.0 / glyph + lunar</div><h3>DotWeather &amp; Air</h3><p class="sub">Nothing OS 3.0 edition</p><p class="desc">An Android weather and environmental-monitoring system with Glyph Atmosphere Pulse, a 14-hour temperature curve, Lunar Ephemeris tracking, WHO health directives, three widgets, and offline caching.</p><div class="tags"><span class="tag">Kotlin 2.2</span><span class="tag">Jetpack Compose</span><span class="tag">Glyph pulse</span><span class="tag">Lunar ephemeris</span><span class="tag">3× widgets</span></div><div class="project-foot"><span>telemetry: environmental</span><a href="https://github.com/SMMahmudIqbal/DotWeather" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="web"><span class="num">06</span><div class="eyebrow">Status: 64 districts mapped</div><h3>BD Food Passport</h3><p class="sub">Culinary vector cartography</p><p class="desc">An interactive food map spanning all 64 districts of Bangladesh, with high-performance client-side SVG traversal, collectible passport stamps, and dynamic social export cards.</p><div class="tags"><span class="tag">Vector SVG</span><span class="tag">Canvas API</span><span class="tag">JavaScript engine</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal/bd-food-passport" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="web ai"><span class="num">07</span><div class="eyebrow">Status: React 19</div><h3>Bahana</h3><p class="sub">Bangladeshi excuse engine</p><p class="desc">A contextual cultural-language generator with paired Bangla and Banglish typography, tactile keyboard triggers, and a renderer for shareable social-story cards.</p><div class="tags"><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal/bahana" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
-          <article class="project" data-tags="web"><span class="num">08</span><div class="eyebrow">Status: Swiss brutalist</div><h3>SnapFlow</h3><p class="sub">Multi-platform media pipeline</p><p class="desc">A high-contrast Swiss Brutalist media-downloader interface with robust client-side routing and streamlined video-parsing pipelines across platforms.</p><div class="tags"><span class="tag">Swiss brutalism</span><span class="tag">CSS architecture</span><span class="tag">JavaScript</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal/snapflow-media-downloader" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="mobile"><span class="num">04</span><div class="eyebrow">Status: physics kinetics</div><h3>Fluid Tracker Pro</h3><p class="sub">Physics canvas engine</p><p class="desc">A minimalist liquid-glass wellness ecosystem for Android, powered by dual-sine-wave canvas physics, accelerometer tilt tracking, and interactive home-screen widgets.</p><div class="tags"><span class="tag">SensorManager</span><span class="tag">Glance widgets</span><span class="tag">Canvas physics</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="mobile"><span class="num">05</span><div class="eyebrow">Rel: v1.8.0 / glyph + lunar</div><h3>DotWeather &amp; Air</h3><p class="sub">Nothing OS 3.0 edition</p><p class="desc">An Android weather and environmental-monitoring system with Glyph Atmosphere Pulse, a 14-hour temperature curve, Lunar Ephemeris tracking, WHO health directives, three widgets, and offline caching.</p><div class="tags"><span class="tag">Kotlin 2.2</span><span class="tag">Jetpack Compose</span><span class="tag">Glyph pulse</span><span class="tag">Lunar ephemeris</span><span class="tag">3× widgets</span></div><div class="project-foot"><span>telemetry: environmental</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="web"><span class="num">06</span><div class="eyebrow">Status: 64 districts mapped</div><h3>BD Food Passport</h3><p class="sub">Culinary vector cartography</p><p class="desc">An interactive food map spanning all 64 districts of Bangladesh, with high-performance client-side SVG traversal, collectible passport stamps, and dynamic social export cards.</p><div class="tags"><span class="tag">Vector SVG</span><span class="tag">Canvas API</span><span class="tag">JavaScript engine</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="web ai"><span class="num">07</span><div class="eyebrow">Status: React 19</div><h3>Bahana</h3><p class="sub">Bangladeshi excuse engine</p><p class="desc">A contextual cultural-language generator with paired Bangla and Banglish typography, tactile keyboard triggers, and a renderer for shareable social-story cards.</p><div class="tags"><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
+          <article class="project" data-tags="web"><span class="num">08</span><div class="eyebrow">Status: Swiss brutalist</div><h3>SnapFlow</h3><p class="sub">Multi-platform media pipeline</p><p class="desc">A high-contrast Swiss Brutalist media-downloader interface with robust client-side routing and streamlined video-parsing pipelines across platforms.</p><div class="tags"><span class="tag">Swiss brutalism</span><span class="tag">CSS architecture</span><span class="tag">JavaScript</span></div><div class="project-foot"><span>branch: main</span><a href="https://github.com/SMMahmudIqbal" target="_blank" rel="noopener noreferrer">Inspect GitHub</a></div></article>
         </div>
       </section>
 
@@ -300,12 +301,7 @@
         </div>
       </section>
     </main>
-    <footer>
-      <span>SMMI // Operator dossier // 2026</span>
-      <span>Food engineering + sovereign software</span>
-      <span id="footerStatus">System nominal</span>
-      <span style="opacity:0.5;font-size:8px;">Developed by S. M. Mahmud Iqbal</span>
-    </footer>
+    <footer><span>SMMI // Operator dossier // 2026</span><span>Food engineering + sovereign software</span><span>Developed by S. M. Mahmud Iqbal</span><span id="footerStatus">System nominal</span></footer>
   </div>
 
   <script>
@@ -313,6 +309,60 @@
       var clock=document.getElementById('clock');
       function tick(){var d=new Date();var p=function(n){return String(n).padStart(2,'0')};clock.textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())+' LOCAL';}
       tick();setInterval(tick,1000);
+
+      var bf=document.getElementById('butterfly');
+      if(bf){
+        var BW=39,BH=15,BCX=19,BCY=7;
+        function inWing(wx,wy){
+          var fx=(wx-8.5)/8,fy=(wy+2.5)/4;
+          if(fx*fx+fy*fy<=1){return 2;}
+          var hx=(wx-6)/5.5,hy=(wy-3)/3.5;
+          if(hx*hx+hy*hy<=1){return 1;}
+          return 0;
+        }
+        function bfHash(x,y){var n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n);}
+        function bfFrame(s,bob){
+          var lift=(1-s)*0.8,rows=[];
+          for(var y=0;y<BH;y++){
+            var line='',gy=y-bob,wy=gy-BCY;
+            for(var x=0;x<BW;x++){
+              var ch=' ',dx=Math.abs(x-BCX);
+              if(dx>0){
+                var wx=dx/s,w=inWing(wx,wy+lift);
+                if(w){
+                  var edge=!inWing((dx+1)/s,wy+lift)||!inWing(wx,wy-1+lift)||!inWing(wx,wy+1+lift)||!inWing(Math.max(dx-1,0.01)/s,wy+lift);
+                  var dF=Math.sqrt((wx-11)*(wx-11)+(wy+2.5)*(wy+2.5));
+                  var dH=Math.sqrt((wx-7.5)*(wx-7.5)+(wy-3.5)*(wy-3.5));
+                  if(w===2&&dF<1.5){ch=dF<0.6?'.':'O';}
+                  else if(w===1&&dH<1.2){ch=dH<0.5?'.':'O';}
+                  else if(edge){ch='#';}
+                  else{var h=bfHash(x,y);ch=h<0.30?'o':(h<0.55?'*':(h<0.75?':':(h<0.90?'.':'+')));}
+                }
+              }
+              if(x===BCX&&gy>=BCY-1&&gy<=BCY+4){ch='#';}
+              if(gy===BCY-2&&x===BCX){ch='O';}
+              if(gy===BCY-3&&x===BCX-1){ch='/';}
+              if(gy===BCY-3&&x===BCX+1){ch='\\';}
+              if(gy===BCY-4&&x===BCX-2){ch='/';}
+              if(gy===BCY-4&&x===BCX+2){ch='\\';}
+              if(gy===BCY-5&&(x===BCX-3||x===BCX+3)){ch='.';}
+              line+=ch;
+            }
+            rows.push(line.replace(/\s+$/,''));
+          }
+          return rows.join('\n');
+        }
+        bf.textContent=bfFrame(1,0);
+        if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+          var ph=0;
+          setInterval(function(){
+            ph+=0.75;
+            var s=0.68+0.32*Math.cos(ph);
+            var bob=Math.round((Math.sin(ph*0.5)+1)/2);
+            bf.textContent=bfFrame(s,bob);
+          },90);
+        }
+      }
 
       var filters=document.querySelectorAll('.filter');
       var projects=document.querySelectorAll('.project');
@@ -322,7 +372,7 @@
         var visible=0;
         filters.forEach(function(b){b.setAttribute('aria-pressed',String(b===button));});
         projects.forEach(function(card){var tags=card.getAttribute('data-tags')||'';var hidden=value!=='all'&&tags.indexOf(value)===-1;card.classList.toggle('hidden',hidden);if(!hidden){visible++;}});
-        if(visibleFiles) visibleFiles.textContent=String(visible).padStart(2,'0')+' / 08';
+        visibleFiles.textContent=String(visible).padStart(2,'0')+' / 08';
       });});
 
       var skills=document.querySelectorAll('.meter i');
@@ -333,7 +383,7 @@
       var sections=document.querySelectorAll('main section[id]');
       var sectorStatus=document.getElementById('sectorStatus');
       var sectorCodes={top:'00_IDENTITY',about:'01_PROFILE',work:'02_WORKS',axioms:'03_AXIOMS',arsenal:'04_ARSENAL',dossier:'05_DOSSIER',dispatch:'06_DISPATCH'};
-      var navObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){if(sectorStatus) sectorStatus.textContent=sectorCodes[entry.target.id]||entry.target.id.toUpperCase();navLinks.forEach(function(link){link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id);});}});},{rootMargin:'-25% 0px -65% 0px'});
+      var navObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){sectorStatus.textContent=sectorCodes[entry.target.id]||entry.target.id.toUpperCase();navLinks.forEach(function(link){link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id);});}});},{rootMargin:'-25% 0px -65% 0px'});
       sections.forEach(function(section){navObserver.observe(section);});
     })();
   </script>
