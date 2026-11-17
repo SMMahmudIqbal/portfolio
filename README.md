@@ -12,10 +12,9 @@ Developed by S. M. Mahmud Iqbal
 
 ## ⚡ Architecture & Features
 - Single-file high-performance responsive dossier
-- System clock & live marquee telemetry
 - Interactive dot-matrix biometric identity scan
 - Calibrated skills matrix with animated progress meters
-- Tag-filtered selected works (11 systems)
+- Tag-filtered selected works (13 projects)
 - Air-gapped and FMCG engineering axioms
 
 ---
